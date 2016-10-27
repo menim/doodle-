@@ -1,0 +1,18 @@
+.doodle-slider {
+    background-color: $bianca;
+    overflow: hidden;
+
+    .doodle-slider-wrapper {
+        max-height: 360px;
+        overflow: hidden;
+    }
+
+    .slick-prev,
+    .slick-next {
+        display: none;
+    }
+
+    .slick-dots {
+        bottom: 15px;
+    }
+}

@@ -1,0 +1,133 @@
+.svg-element {
+    transform: scale(.5) rotate(180deg);
+    -ms-transform: scale(.5) rotate(180deg);
+    position: absolute;
+    top: -45px;
+    right: 150px;
+
+    @include break-point(lg) {
+        right: 105px;
+    }
+
+    @include break-point(sm) {
+        height: 20px;
+        width: 20px;
+        top: -70px;
+    }
+
+    @include break-point(360px) {
+        right: 20px;
+    }
+}
+
+.svg-element2 {
+    position: absolute;
+    top: 109px;
+    left: 200px;
+
+    @include break-point(lg) {
+        left: 155px;
+    }
+
+    @include break-point(md) {
+        display: none;
+    }
+
+    @include break-point(360px) {
+        top: 68px;
+    }
+
+    @include break-point(sm) {
+        width: 50px;
+        display: block;
+    }
+}
+
+.svg-element3 {
+    position: absolute;
+    right: 50px;
+
+    @include break-point(lg) {
+        right: 5px;
+    }
+
+    @include break-point(sm) {
+        right: 15px;
+        width: 40px;
+    }
+
+    @include break-point(360px) {
+        top: 65px;
+    }
+}
+
+.svg-element4 {
+    position: absolute;
+    left: 150px;
+    top: -13px;
+    transform: rotate(180deg);
+
+    @include break-point(lg) {
+        left: 105px;
+    }
+
+    @include break-point(sm) {
+        top: -9px;
+        left: 0;
+        width: 50px;
+    }
+}
+
+.svg-element5 {
+    position: absolute;
+    left: 50px;
+
+    @include break-point(lg) {
+        left: 5px;
+    }
+
+    @include break-point(sm) {
+        width: 40px;
+    }
+
+    @include break-point(360px) {
+        top: 65px;
+    }
+}
+
+.svg-element6 {
+    position: absolute;
+    top: 106px;
+    right: 200px;
+    transform: rotate(50deg);
+    -ms-transform: rotate(50deg);
+
+    @include break-point(md) {
+        display: none;
+    }
+
+    @include break-point(lg) {
+        right: 155px;   
+    }
+}
+
+.loaded {
+
+    .st0 {
+        animation: dash 5s linear;
+        -webkit-animation: dash 5s linear;
+        animation-fill-mode: forwards;
+        -webkit-fill-mode: forwards;
+
+        &is-filled {
+            fill: gray;
+        }
+    }
+}
+
+@keyframes dash {
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}

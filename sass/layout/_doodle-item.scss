@@ -1,0 +1,228 @@
+.doodle-item {
+    color: $mine-shaft;
+    position: relative;
+    overflow: hidden;
+}
+
+.visual-doodle {
+    background-color: $french-lilac;
+
+    @include gradient-linear-generator(15%,85%,$french-lilac,$east-side,40deg);
+
+    .basic-btn {
+        margin-top: 5.294em;
+
+        @include basic-btn($white,$fuchsia-pink,.8235em,2.9375em);
+
+        @include break-point(sm) {
+            margin-top: 2.294em;
+        }
+    }
+
+    .doodle-item-ribbon {
+        background-color: $east-side;
+    }
+}
+
+.ok-doodle {
+    background-color: $rose-bud;
+
+    @include gradient-linear-generator(0%,100%,$rose-bud,$froly,40deg);
+
+    .basic-btn {
+        margin-top: 5.294em;
+
+        @include basic-btn($white,$radical-red,.8235em,2.9375em);
+
+        @include break-point(sm) {
+            margin-top: 2.294em;
+        }
+    }
+
+    .doodle-item-ribbon {
+        background-color: $carnation;
+    }
+}
+
+.simple-step-doodle {
+    background-color: $caper;
+
+    @include gradient-linear-generator(0%,100%,$caper,$wild-willow,40deg);
+
+    .basic-btn {
+        margin-top: 5.294em;
+
+        @include basic-btn($white,$atlantis,.8235em,2.9375em);
+
+        @include break-point(sm) {
+            margin-top: 2.294em;
+        }
+    }
+
+    .doodle-item-ribbon {
+        background-color: $mantis;
+    }
+}
+
+.doodle-container {
+    position: relative;
+    transition: transform 500ms ease-in;
+
+    .preview {
+        display: none;
+        float: left;
+        width: 23%;
+        margin-right: 2%;
+        margin-bottom: 1.588em;
+        position: relative;
+
+        @include break-point(md) {
+            width: 30%;
+            margin-right: 3%;
+        }
+
+        @include break-point(sm) {
+            width: 50%;
+            margin: 0 auto;
+            float: none;
+            margin-bottom: 25px;
+        }
+    }
+
+    .full {
+        min-height: 100%;
+        transition: min-height .25s ease-in;
+    }
+
+    &.clicked {
+        transition: transform 500ms ease-out;
+        transform: translateX(-100%);
+    }
+
+    &:nth-child(2) {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        transform:translateX(100%);
+        width: 100%;
+        right: 0;
+        left: 0;
+        z-index: 0;
+        transition: transform 500ms ease-out;
+    }
+
+    &.clicked-two {
+        transition: transform 500ms ease-out;
+        transform: translateX(0);
+    }
+}
+
+.doodle-item-wrapper {
+
+    @extend %doodle;
+
+    @include break-point(sm) {
+        padding: 0 1em;
+    }
+
+    .doodle-item-content {
+        float: left;
+        width: 40%;
+
+        @include break-point(sm){
+            width: 100%;
+            float: none;
+            text-align: center;
+        }
+
+        &.hideme {
+            position: relative;
+            right: 100%;
+            opacity: 0;
+        }
+
+        li {
+            margin-bottom: 15px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @include break-point(lg){
+                font-size: .9rem;
+                line-height: 1.6em;
+            }
+
+            @include break-point(md){
+                font-size: .8rem;
+            }
+
+            @include break-point(sm) {
+                font-size: 1rem;
+                text-align: left;
+            }
+        }
+
+        p {
+
+            @include break-point(lg){
+                font-size: .9rem;
+                line-height: 1.6em;
+            }
+
+            @include break-point(md){
+                font-size: .8rem;
+            }
+
+            @include break-point(sm) {
+                font-size: .9rem;
+                text-align: left;
+            }
+        }
+    }
+}
+
+.doodle-item-images {
+    width: 60%;
+    float: right;
+    text-align: center;
+    padding-bottom: 5.5625em;
+
+    @include break-point(sm) {
+        width: 100%;
+        float: none;
+    }
+
+    &.hideme {
+        left: 100%;
+        position: relative;
+    }
+
+    img {
+        position: relative;
+        left: 60px;
+        top: 10px;
+        width: 92%;
+
+        @include break-point(md) {
+            top: 60px;
+            left: 50px;
+        }
+
+        @include break-point(sm) {
+            top: 42px;
+            left: 0;
+        }
+    }
+}
+
+.doodle-item-slider {
+    @extend %clearfix;
+
+    @include break-point(sm) {
+        padding: 2em 0;
+        overflow-y: scroll;
+        text-align: center;
+        height: 750px;
+    }
+}

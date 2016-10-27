@@ -1,0 +1,182 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    font-family: $font-family-1;
+}
+
+button {
+    border: none;
+    padding: 0;
+}
+
+ul {
+    padding-left: 0;
+    margin: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.0625rem;
+    color: $sandal;
+    font-weight: 500;
+
+    &:hover {
+        padding-bottom: 2px;
+        border-bottom: 2px $sandal solid;
+    }
+
+    @include break-point($header-hlg-max) {
+        font-size: 1rem;
+    }
+
+    @include break-point(lg) {
+        font-size: .9rem;
+    }
+}
+
+p {
+    line-height: 1.6;
+}
+
+fieldset {
+    border: none;
+    float: left;
+    margin-right: 2.5em;
+    padding: 0 0 0 1em;
+
+    @include break-point(lg) {
+        margin-right: 2em;
+        padding-left: .5em;
+    }
+
+    @include break-point(md) {
+        margin-right: 1em;
+    }
+
+    @include break-point(sm) {
+        float: none;
+        text-align: center;
+        padding-left: 0;
+        margin: 0;
+    }
+}
+
+label {
+    display: block;
+    text-align: left;
+    color: $cactus;
+}
+
+textarea {
+    display: block;
+    margin-bottom: 2.8125em;
+    padding-top: 1em;
+}
+
+input {
+    display: block;
+    margin-bottom: 1.375em;
+    height: 45px;
+}
+
+input,
+textarea {
+    border-radius: 4px;
+    border: 1px solid $cactus;
+    font-size: 1rem;
+    width: 382px;
+    margin-top: .41176em;
+    background-color: $ecru-white;
+    outline: none;
+    padding-left: 1.125em;
+
+    &:focus {
+        box-shadow: inset 1px 2px 3px rgba(10,13,18,.3);
+    }
+
+    @include break-point(lg) {
+        width: 350px;
+    }
+
+    @include break-point(md) {
+        width: 250px;
+    }
+
+    @include break-point(sm) {
+        width: 382px;
+        margin: 0;
+    }
+
+    @include break-point(xs) {
+        width: 100%;
+    }
+}
+
+label {
+    font-size: 1.0625rem;
+    position: relative;
+}
+
+img {
+    vertical-align: middle;
+}
+
+h1 {
+    font-family: $font-family-2;
+    font-size: 4.75rem;
+    line-height: 1;
+    color: #596952;
+    background-color: $bianca;
+    text-align: center;
+    margin: 0 auto;
+    padding: .75em 0 .57894em;
+    position: relative;
+
+    @include break-point(md) {
+        font-size: 3.75rem;
+        padding-left: .01em;
+        padding-right: .01em;
+    }
+
+    @include break-point(450px) {
+        font-size: 1.75rem;
+    }
+}
+
+h2 {
+
+    @extend %doodle-item-header;
+
+    @include break-point($header-hlg-max) {
+        font-size: 1.5875rem;
+    }
+
+    @include break-point(lg){
+        font-size: 1.3875rem;
+    }
+
+    @include break-point(md) {
+        font-size: 1.2875rem;
+    }
+
+    @include break-point(sm) {
+        font-size: 1.4875rem;
+        text-align: center;
+    }
+}
+
+@include font-face(m-webfont,"../fonts/m-webfont");

@@ -1,0 +1,57 @@
+header {
+
+    @extend %clearfix;
+
+    box-shadow: 2px 2px 6px 0 rgba($black, .34);
+    max-height: 130px;
+    transition: max-height .5s ease-out;
+    line-height: 8.125em;
+    position: relative;
+    z-index: 1;
+    padding: 0 .625em;
+
+    @include break-point(sm){
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .basic-btn {
+
+        @include basic-btn($white,$cactus,.8235em,2.9375em);
+
+        @include break-point(lg) {
+
+            @include basic-btn($white,$cactus,.6235em,1.9375em);
+        }
+
+        @include break-point(sm) {
+
+            @include basic-btn($white,$cactus,.8235em,2.9375em);
+        }
+    }
+
+    img {
+
+        @include break-point(lg) {
+            width: 70px;
+        }
+
+        @include break-point(sm) {
+            width: 104px;
+        }
+    }
+
+    .float-r {
+
+        @include break-point(sm) {
+            float: none;
+        }
+    }
+
+    .float-l {
+
+        @include break-point(sm) {
+            float: none;
+        }
+    }
+}

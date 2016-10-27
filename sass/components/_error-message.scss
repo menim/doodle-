@@ -1,0 +1,19 @@
+.error {
+    position: absolute;
+    font-size: .8rem;
+    bottom: -2.6em;
+    color: red;
+    opacity: 0;
+    transition: opacity 1s linear;
+}
+
+.is-active-error {
+    opacity: 1;
+}
+
+@include break-point(sm) {
+
+    [type="email"]+span {
+        bottom: -1.5em;
+    }
+}

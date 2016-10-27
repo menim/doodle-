@@ -1,0 +1,30 @@
+
+.doodle-quote {
+
+    @extend %quote-text;
+
+    @extend %valign;
+
+    blockquote {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 0;
+        margin-right: 0;
+        width: 70%;
+
+        @include break-point(lg) {
+            width: 90%;
+        }
+    }
+
+    @include break-point(md) {
+        height: auto;
+        font-size: 1rem;
+
+        &:after {
+            content: "";
+            display: block;
+        }
+    }
+}
+
