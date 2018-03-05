@@ -1,105 +1,105 @@
-@mixin basic-btn($btn-color,$btn-bg-color,$vertical-padding,$gorizont-padding,$size-font:1.0625rem) {
-    color: $btn-color;
-    cursor: pointer;
-    display: inline-block;
-    font-size: $size-font;
-    font-family: $font-family-1;
-    line-height: 1;
-    text-align: center;
-    /*box-shadow: 2px 2px 3px rgba(0,0,0,.5);*/
-    border-radius: 3px;
-    padding: $vertical-padding $gorizont-padding;
-    background: $btn-bg-color;
-    transform: translateZ(0);
-    transition: transform .3s linear;
+@mixin basic-btn($btn-color, $btn-bg-color, $vertical-padding, $gorizont-padding, $size-font: 1.0625rem) {
+  color: $btn-color;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $size-font;
+  font-family: $font-family-1;
+  line-height: 1;
+  text-align: center;
+  /*box-shadow: 2px 2px 3px rgba(0,0,0,.5);*/
+  border-radius: 3px;
+  padding: $vertical-padding $gorizont-padding;
+  background: $btn-bg-color;
+  transform: translateZ(0);
+  transition: transform .3s linear;
+
+  &:before {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 100%;
+    left: 5%;
+    height: 10px;
+    width: 90%;
+    opacity: 0;
+    background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, .35) 0%, rgba(0, 0, 0, 0) 80%);
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, .35) 0%, rgba(0, 0, 0, 0) 80%);
+    transition: transform .3s, opacity .3s;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: none;
+    transform: translateY(-5px);
 
     &:before {
-        pointer-events: none;
-        position: absolute;
-        z-index: -1;
-        content: "";
-        top: 100%;
-        left: 5%;
-        height: 10px;
-        width: 90%;
-        opacity: 0;
-        background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, .35) 0%, rgba(0, 0, 0, 0) 80%);
-        background: radial-gradient(ellipse at center, rgba(0, 0, 0, .35) 0%, rgba(0, 0, 0, 0) 80%);
-        transition: transform .3s, opacity .3s;
+      opacity: 1;
+      -webkit-transform: translateY(5px);
+      transform: translateY(5px);
     }
+  }
 
-    &:hover,
-    &:focus,
-    &:active {
-        border: none;
-        transform: translateY(-5px);
+  @include break-point($header-hlg-max) {
+    font-size: 1rem;
+  }
 
-        &:before {
-            opacity: 1;
-            -webkit-transform: translateY(5px);
-            transform: translateY(5px);
-        }
-    }
+  @include break-point(lg) {
+    font-size: .9rem;
+  }
 
-    @include break-point($header-hlg-max) {
-        font-size: 1rem;
-    }
-
-    @include break-point(lg) {
-        font-size: .9rem;
-    }
-
-    @include break-point(sm) {
-        font-size: 1rem;
-    }
+  @include break-point(sm) {
+    font-size: 1rem;
+  }
 }
 
 @mixin break-point($point) {
 
-    @if $point == lg {
+  @if $point == lg {
 
-        @media only screen and (max-width: $screen-md-max) {
+    @media only screen and (max-width: $screen-md-max) {
 
-            @content;
+      @content;
 
-        }
     }
+  }
 
-    @else if $point==md {
+  @else if $point==md {
 
-        @media only screen and (max-width: $screen-sm-max) {
+    @media only screen and (max-width: $screen-sm-max) {
 
-            @content;
+      @content;
 
-        }
     }
+  }
 
-    @else if $point==sm {
+  @else if $point==sm {
 
-        @media only screen and (max-width: $screen-xs-max) {
+    @media only screen and (max-width: $screen-xs-max) {
 
-            @content;
+      @content;
 
-        }
     }
+  }
 
-    @else if $point ==xs {
+  @else if $point ==xs {
 
-        @media only screen and (max-width: $screen-xs-min) {
+    @media only screen and (max-width: $screen-xs-min) {
 
-            @content;
+      @content;
 
-        }
     }
+  }
     
-    @else { 
+  @else { 
 
-        @media only screen and (max-width: $point) {
+    @media only screen and (max-width: $point) {
 
-            @content;
+      @content;
 
-        }
     }
+  }
 }
 
 
@@ -108,13 +108,13 @@
 // =============================================================================
 
 @function str-replace($string, $search, $replace: "") {
-    $index: str-index($string, $search);
+  $index: str-index($string, $search);
 
-    @if $index {
-        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
-    }
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
 
-    @return $string;
+  @return $string;
 }
 
 // =============================================================================
@@ -122,32 +122,32 @@
 // =============================================================================
 
 @mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
-    $src: null;
+  $src: null;
 
-    $extmods: (
-        eot: "?",
-        svg: "#" + str-replace($name, " ", "_")
-    );
+  $extmods: (
+    eot: "?",
+    svg: "#" + str-replace($name, " ", "_")
+  );
 
-    $formats: (
-        otf: "opentype",
-        ttf: "truetype"
-    );
+  $formats: (
+    otf: "opentype",
+    ttf: "truetype"
+  );
 
-    @each $ext in $exts {
-        $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
-        $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
-        $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
-    }
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+  }
 
-    @font-face {
-        font-family: quote($name);
-        font-style: $style;
-        font-weight: $weight;
-        src: $src;
-    }
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
 }
 
 @mixin gradient-linear-generator ($from, $to, $from-color, $to-color,$angle){
-    background-image: linear-gradient($angle, $from-color $from, $to-color $to);
+  background-image: linear-gradient($angle, $from-color $from, $to-color $to);
 }
