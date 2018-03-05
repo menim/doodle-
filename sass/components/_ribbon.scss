@@ -1,23 +1,23 @@
 .doodle-item-ribbon {
 
-    @extend %ribbon;
+  @extend %ribbon;
 
-    a {
-        color: $white;
-        text-transform: uppercase;
-        margin-right: 20px;
-        display: block;
-        border: 0;
-    }
+  a {
+    color: $white;
+    text-transform: uppercase;
+    margin-right: 20px;
+    display: block;
+    border: 0;
+  }
 }
 
 .clicked-ribbon {
-    transition: all 500ms ease-in;
-    right: 100%;
-    margin-right: -90px;
+  transition: all 500ms ease-in;
+  right: 100%;
+  margin-right: -90px;
 
-    @include break-point(sm) {
-        margin-right: auto;
-        right: auto;
-    }
+  @include break-point(sm) {
+    margin-right: auto;
+    right: auto;
+  }
 }

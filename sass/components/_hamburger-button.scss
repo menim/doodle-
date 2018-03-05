@@ -1,83 +1,83 @@
 .hamburger-btn {
-    display: none;
+  display: none;
+  position: absolute;
+  overflow: hidden;
+  top: 45px;
+  margin: 0;
+  padding: 0;
+  width: 45px;
+  height: 45px;
+  font-size: 0;
+  text-indent: -9999px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+  transition: background .3s;
+
+  @include break-point(sm) {
+      display: block;
+  }
+
+  &:focus {
+      outline: none;
+  }
+
+  span {
+    display: block;
     position: absolute;
-    overflow: hidden;
-    top: 45px;
-    margin: 0;
-    padding: 0;
-    width: 45px;
-    height: 45px;
-    font-size: 0;
-    text-indent: -9999px;
-    appearance: none;
-    box-shadow: none;
-    border-radius: none;
-    border: 0;
-    cursor: pointer;
-    background: transparent;
-    transition: background .3s;
+    top: 20px;
+    left: 5px;
+    right: 5px;
+    height: 4px;
+    background: $sandal;
+    transition: background 0s .3s;
 
-    @include break-point(sm) {
-        display: block;
+    &:before,
+    &:after {
+      position: absolute;
+      display: block;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: $sandal;
+      content: "";
+      transition-duration: .3s, .3s;
+      transition-delay: .3s, 0s;
     }
 
-    &:focus {
-        outline: none;
+    &:before {
+      top: -10px;
+      transition-property: top, transform;
     }
 
-    span {
-        display: block;
-        position: absolute;
-        top: 20px;
-        left: 5px;
-        right: 5px;
-        height: 4px;
-        background: $sandal;
-        transition: background 0s .3s;
-
-        &:before,
-        &:after {
-            position: absolute;
-            display: block;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background-color: $sandal;
-            content: "";
-            transition-duration: .3s, .3s;
-            transition-delay: .3s, 0s;
-        }
-
-        &:before {
-            top: -10px;
-            transition-property: top, transform;
-        }
-
-        &:after {
-            bottom: -10px;
-            transition-property: bottom, transform;
-        }
+    &:after {
+      bottom: -10px;
+      transition-property: bottom, transform;
     }
+  }
 }
 
 .is-active {
 
-    span {
-        background: none;
+  span {
+    background: none;
 
-        &:after,
-        &:before {
-            transition-delay: 0s, .3s;
-        }
-
-        &:before {
-            top: 0;
-            transform: rotate(45deg);
-        }
-
-        &:after {
-            bottom: 0;
-            transform: rotate(-45deg);
-        }
+    &:after,
+    &:before {
+      transition-delay: 0s, .3s;
     }
+
+    &:before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      bottom: 0;
+      transform: rotate(-45deg);
+    }
+  }
 }
