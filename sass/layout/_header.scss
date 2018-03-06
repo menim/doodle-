@@ -3,16 +3,16 @@ header {
   @extend %clearfix;
 
   box-shadow: 2px 2px 6px 0 rgba($black, .34);
-  max-height: 130px;
-  transition: max-height .5s ease-out;
+  height: 130px;
+  transition: height .5s ease-out;
   line-height: 8.125em;
+  padding: 0 .625em;
   position: relative;
   z-index: 1;
 
-  @include break-point(sm){
+  @include break-point(sm) {
     text-align: center;
     overflow: hidden;
-    padding: 0 .625em;
   }
 
   .basic-btn {
@@ -25,6 +25,7 @@ header {
 
     @include break-point(sm) {
       @include basic-btn($white,$cactus,.8235em,2.9375em);
+      margin: 2em 0;
     }
   }
 
@@ -36,6 +37,7 @@ header {
 
     @include break-point(sm) {
       width: 104px;
+      margin: 2em 0;
     }
   }
 

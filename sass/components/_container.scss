@@ -2,4 +2,13 @@
   min-width: 320px;
   max-width: 1370px;
   margin: 0 auto;
+
+  header & {
+    display: flex;
+    align-items: center;
+
+    @include break-point(sm) {
+      flex-direction: column;
+    }
+  }
 }

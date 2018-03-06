@@ -18,11 +18,12 @@
   transition: background .3s;
 
   @include break-point(sm) {
-      display: block;
+    display: block;
+    align-self: left;
   }
 
   &:focus {
-      outline: none;
+    outline: none;
   }
 
   span {
