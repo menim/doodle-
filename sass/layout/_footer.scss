@@ -1,4 +1,4 @@
-footer {
+.footer {
   background: $amethyst;
   background: rgba($amethyst,.5) url("../images/footer-bg.jpg") no-repeat;
   background-size: cover;
@@ -48,7 +48,7 @@ footer {
       outline: none;
     }
 
-    @include break-point(sm){
+    @include break-point(sm) {
       margin-top: 2.5em;
     }
   }
