@@ -12,6 +12,7 @@
   @include break-point(sm) {
     text-align: center;
     overflow: hidden;
+    display: block;
   }
 
   .basic-btn {
