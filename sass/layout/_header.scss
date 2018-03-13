@@ -1,11 +1,10 @@
 .header {
   
   @extend %clearfix;
-
+  display: flex;
   box-shadow: 2px 2px 6px 0 rgba($black, .34);
   height: 130px;
   transition: height .5s ease-out;
-  line-height: 8.125em;
   padding: 0 .625em;
   position: relative;
   z-index: 1;
