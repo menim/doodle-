@@ -40,18 +40,4 @@
       margin: 2em 0;
     }
   }
-
-  .float-r {
-
-    @include break-point(sm) {
-      float: none;
-    }
-  }
-
-  .float-l {
-
-    @include break-point(sm) {
-      float: none;
-    }
-  }
 }
