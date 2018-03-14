@@ -29,14 +29,9 @@
     }
   }
 
-  img {
-
-    @include break-point(lg) {
-      width: 70px;
-    }
+  .logo {
 
     @include break-point(sm) {
-      width: 104px;
       margin: 2em 0;
     }
   }
