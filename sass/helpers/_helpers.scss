@@ -18,16 +18,6 @@
   }
 }
 
-%doodle {
-  padding: 3.625em 2.5em 8.9375em;
-  position: relative;
-  overflow: hidden;
-
-  @include break-point(md) {
-    padding-bottom: 15.9375em;
-  }
-}
-
 %doodle-item-header {
   font-family: m-webfont;
   color: $white;
