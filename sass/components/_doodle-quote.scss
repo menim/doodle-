@@ -1,7 +1,13 @@
 
 .doodle-quote {
 
-  @extend %quote-text;
+  height: 180px;
+  color: $cactus;
+  font-family: m-webfont;
+  font-size: 1.25rem;
+  line-height: 2.2em;
+  text-align: center;
+  margin: 0; 
 
   @extend %valign;
 
