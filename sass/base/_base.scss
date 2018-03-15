@@ -157,26 +157,4 @@ img {
   }
 }
 
-h2 {
-
-  @extend %doodle-item-header;
-
-  @include break-point($header-hlg-max) {
-    font-size: 1.5875rem;
-  }
-
-  @include break-point(lg) {
-    font-size: 1.3875rem;
-  }
-
-  @include break-point(md) {
-    font-size: 1.2875rem;
-  }
-
-  @include break-point(sm) {
-    font-size: 1.4875rem;
-    text-align: center;
-  }
-}
-
 @include font-face(m-webfont,"../fonts/m-webfont");

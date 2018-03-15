@@ -4,6 +4,32 @@
   overflow: hidden;
 }
 
+.doodle-item-header {
+
+  font-family: m-webfont;
+  color: $white;
+  font-size: 1.6875rem;
+  line-height: 1.9em;
+  margin-bottom: 1.5em;
+
+  @include break-point($header-hlg-max) {
+    font-size: 1.5875rem;
+  }
+
+  @include break-point(lg) {
+    font-size: 1.3875rem;
+  }
+
+  @include break-point(md) {
+    font-size: 1.2875rem;
+  }
+
+  @include break-point(sm) {
+    font-size: 1.4875rem;
+    text-align: center;
+  }
+}
+
 .visual-doodle {
   background-color: $french-lilac;
 
@@ -125,7 +151,7 @@
   @include break-point(md) {
     padding-bottom: 15.9375em;
   }
-  
+
   @include break-point(sm) {
     padding: 0 1em;
   }
