@@ -36,26 +36,6 @@
   margin-bottom: 1.5em;
 }
 
-%ribbon {
-  position: absolute;
-  width: 20.5em;
-  padding-left: 1.2em;
-  font-size: 1.25rem;
-  height: 59px;
-  line-height: 2.95em;
-  right: 0;
-  transition: all 500ms ease-in;
-  bottom: 55px;
-
-  @include break-point(sm) {
-    margin: 0 auto;
-    text-align: center;
-    width: 15.5em;
-    position: relative;
-    margin-top: 55px;
-  }
-}
-
 .active {
   height: auto;
   overflow: auto;
