@@ -14,17 +14,16 @@ $(document).ready(function() {
   });
 
   $("#doodle-slider-wrapper").slick({
-    dots: true,
     infinite: true,
     speed: 1000,
     fade: true,
-    autoplay: true,
     cssEase: "linear",
-    arrows: false,
+    arrows: true,
     mobilefirst: true
   });
 
   document.body.className += " loaded";
+  
 
   /*Appear images and text on main page, when scroll*/
 

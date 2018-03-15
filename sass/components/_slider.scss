@@ -2,17 +2,75 @@
   background-color: $bianca;
   overflow: hidden;
 
-  .doodle-slider-wrapper {
-    max-height: 360px;
-    overflow: hidden;
-  }
-
-  .slick-prev,
-  .slick-next {
+  @include break-point(sm) {
     display: none;
   }
 
-  .slick-dots {
-    bottom: 15px;
+  .doodle-slider-wrapper {
+    max-width: 1366px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .slick-list {
+    z-index: 0;
+  }
+
+  .slick-next,
+  .slick-prev {
+    background-color: $gallery;
+    height: 50px;
+    width: 50px;
+    transition: background-color .2s ease-in;
+    z-index: 1;
+
+
+    &:focus {
+      background-color: $gallery;
+    }
+
+    &:hover {
+      background-color: $black;
+
+      &:before {
+        border-color: $gallery;
+      }
+    }
+  }
+
+  .slick-next {
+    right: 0;
+
+    &::before {
+      content: "";
+      border-right: 4px solid $black;
+      border-top: 4px solid $black;
+      display: block;
+      height: 50%;
+      width: 50%;
+      transform: rotate(45deg);
+      transition: border-right border-left .2s ease-in;
+    }
+  }
+
+  .slick-prev {
+    left: 0;
+    
+    &::before {
+      content: "";
+      border-left: 4px solid $black;
+      border-top: 4px solid $black;
+      display: block;
+      height: 50%;
+      width: 50%;
+      transform: rotate(-45deg) translate(50%, 50%);
+      transition: border-right border-left .2s ease-in;
+    }
   }
 }
+
+
