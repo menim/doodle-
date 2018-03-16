@@ -6,17 +6,14 @@
   font-family: m-webfont;
   font-size: 1.25rem;
   line-height: 2.2em;
-  text-align: center;
-  margin: 0; 
-
-  @extend %valign;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   blockquote {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 0;
-    margin-right: 0;
     width: 70%;
+    text-align: center;
 
     @include break-point(lg) {
       width: 90%;
