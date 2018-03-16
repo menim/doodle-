@@ -34,7 +34,7 @@ $(document).ready(function() {
         bottomOfObject = self.offset().top + self.outerHeight(),
         bottomOfWindow = windowVar.scrollTop() + windowVar.height();
       if (bottomOfWindow > bottomOfObject) {
-        if (self.hasClass("doodle-item-content")) {
+        if (self.hasClass("doodle-item__content")) {
           self.animate({ right: 0 }, 700).animate({ opacity: 1 });
         } else {
           self.animate({ left: 0, opacity: 1 }, 700).animate({ opacity: 1 });
@@ -79,11 +79,11 @@ $(document).ready(function() {
       elemLen = null,
       containerPreview = null;
 
-    $(".doodle-item-ribbon").find("a").click(function(e) {
+    $(".doodle-item__ribbon").find("a").click(function(e) {
       e.preventDefault();
       self = $(this);
       container = self.parent().parent();
-      items = container.find(".doodle-container");
+      items = container.find(".doodle-item__container");
       frstChild = items.eq(0);
       secChild = items.eq(1);
       elem = container.find(".preview");
@@ -185,13 +185,13 @@ form.addEventListener("submit", function(event) {
 var xDown = null;
 var yDown = null;
 
-$(".doodle-container").on("touchstart", function(e) {
+$(".doodle-item__container").on("touchstart", function(e) {
   xDown = e.originalEvent.touches[0].clientX;
 });
 
-$(".doodle-container").on("touchmove", function(e) {
+$(".doodle-item__container").on("touchmove", function(e) {
   var self = $(this),
-    ribbon = self.parent().find(".doodle-item-ribbon").find("a").children();
+    ribbon = self.parent().find(".doodle-item__ribbon").find("a").children();
   if (!xDown) {
     return;
   }
