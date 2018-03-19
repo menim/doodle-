@@ -215,7 +215,14 @@
   .preview {
     flex: 0 1 auto;
     margin: .5em;
-
+    transform: scale(1);
+    transition: transform .2s ease-in;
+    
+    &:hover {
+      border-bottom: 0;
+      padding-bottom: 0;
+      transform: scale(1.08);
+    }
   }
 
   img {
