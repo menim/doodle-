@@ -79,10 +79,10 @@ $(document).ready(function() {
       elemLen = null,
       containerPreview = null;
 
-    $(".doodle-item__ribbon").find("a").click(function(e) {
+    $(".doodle-item__ribbon").click(function(e) {
       e.preventDefault();
       self = $(this);
-      container = self.parent().parent();
+      container = self.parent();
       items = container.find(".doodle-item__container");
       frstChild = items.eq(0);
       secChild = items.eq(1);

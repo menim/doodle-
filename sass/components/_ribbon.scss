@@ -1,38 +1,27 @@
 .doodle-item__ribbon {
-
   position: absolute;
-  width: 20.5em;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   height: 59px;
-  line-height: 2.95em;
   right: 0;
   transition: all 500ms ease-in;
   bottom: 55px;
-
-  a {
-    color: $white;
-    text-transform: uppercase;
-    padding-left: 1.2em;
-    display: block;
-    border: 0;
-  }
+  color: $white;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 0 1.2em;
+  display: block;
+  border: 0;
 
   @include break-point(sm) {
     margin: 0 auto;
     text-align: center;
-    width: 15.5em;
     position: relative;
     margin-top: 55px;
   }
 }
 
 .clicked-ribbon {
-  transition: all 500ms ease-in;
-  right: 100%;
-  margin-right: -90px;
-
-  @include break-point(sm) {
-    margin-right: auto;
-    right: auto;
-  }
+   .doodle-item__ribbon {
+     left: 0;
+   }
 }
