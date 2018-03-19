@@ -10,10 +10,6 @@
     max-width: 1366px;
     margin: 0 auto;
     overflow: hidden;
-
-    img {
-      width: 100%;
-    }
   }
 
   .slick-list {
@@ -31,6 +27,7 @@
 
     &:focus {
       background-color: $gallery;
+      outline-style: auto;
     }
 
     &:hover {
