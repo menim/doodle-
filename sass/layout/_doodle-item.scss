@@ -127,10 +127,6 @@
   overflow: hidden;
   display: flex;
 
-  @include break-point(md) {
-    padding-bottom: 15.9375em;
-  }
-
   @include break-point(sm) {
     padding: 0 1em;
     flex-direction: column;
@@ -209,7 +205,7 @@
   justify-content: center;
 
   .preview {
-    flex: 0 1 auto;
+    flex: 0 1 23%;
     margin: .5em;
     transform: scale(1);
     transition: transform .2s ease-in;
