@@ -2,7 +2,6 @@
 
   position: absolute;
   width: 20.5em;
-  padding-left: 1.2em;
   font-size: 1.25rem;
   height: 59px;
   line-height: 2.95em;
@@ -13,7 +12,7 @@
   a {
     color: $white;
     text-transform: uppercase;
-    margin-right: 20px;
+    padding-left: 1.2em;
     display: block;
     border: 0;
   }
