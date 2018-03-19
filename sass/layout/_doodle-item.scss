@@ -197,6 +197,10 @@
     left: 100%;
     position: relative;
   }
+
+  @include break-point(sm) {
+    margin: 2em 0;
+  }
 }
 
 .doodle-item__slider {
