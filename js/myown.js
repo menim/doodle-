@@ -34,7 +34,7 @@ $(document).ready(function() {
         bottomOfObject = self.offset().top + self.outerHeight(),
         bottomOfWindow = windowVar.scrollTop() + windowVar.height();
       if (bottomOfWindow > bottomOfObject) {
-        if (self.hasClass("doodle-item__content")) {
+        if (self.hasClass("doodle-item__description")) {
           self.animate({ right: 0 }, 700).animate({ opacity: 1 });
         } else {
           self.animate({ left: 0, opacity: 1 }, 700).animate({ opacity: 1 });
