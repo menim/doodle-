@@ -2,13 +2,14 @@
   "name": "tol",
   "version": "0.0.0",
   "dependencies": {
+    "cssnano": "^3.10.0",
     "csv": "~0.3.6",
     "grunt-contrib-sass": "^1.0.0",
+    "pixrem": "^4.0.1",
     "superagent": "~0.15.7"
   },
   "devDependencies": {
-    "autoprefixer": "^1.3.1",
-    "autoprefixer-core": "^6.0.1",
+    "autoprefixer": "^8.1.0",
     "eslint-config-google": "^0.9.1",
     "grunt": "~0.4.2",
     "grunt-bower-install": "~0.5.0",
@@ -27,6 +28,7 @@
     "grunt-contrib-uglify": "~0.2.7",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-html": "^8.6.1",
+    "grunt-imageoptim": "^1.4.4",
     "grunt-mocha": "~0.4.0",
     "grunt-modernizr": "~0.3.0",
     "grunt-postcss": "^0.8.0",
