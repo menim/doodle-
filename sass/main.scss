@@ -1,47 +1,47 @@
-@import "base/_normalize";
+@import 'base/normalize';
 
-@import "helpers/_mixins";
+@import 'helpers/mixins';
 
-@import "helpers/_variables";
+@import 'helpers/variables';
 
-@import "helpers/_helpers";
+@import 'helpers/helpers';
 
-@import "base/_base";
+@import 'base/base';
 
-@import "layout/_header";
+@import 'layout/header';
 
-@import "layout/_doodle-item";
+@import 'layout/doodle-item';
 
-@import "layout/_other-projects";
+@import 'layout/other-projects';
 
-@import "layout/_footer";
+@import 'layout/footer';
 
-@import "components/_container";
+@import 'components/container';
 
-@import "components/_ribbon";
+@import 'components/ribbon';
 
-@import "components/_logo";
+@import 'components/logo';
 
-@import "components/_nav";
+@import 'components/nav';
 
-@import "components/_slider";
+@import 'components/slider';
 
-@import "components/_doodle-quote";
+@import 'components/doodle-quote';
 
-@import "components/_ribbon";
+@import 'components/ribbon';
 
-@import "components/_triangle";
+@import 'components/triangle';
 
-@import "components/_telephones";
+@import 'components/telephones';
 
-@import "components/_hamburger-button";
+@import 'components/hamburger-button';
 
-@import "components/_svg-elements";
+@import 'components/svg-elements';
 
-@import "components/_contacts";
+@import 'components/contacts';
 
-@import "components/_error-message";
+@import 'components/error-message';
 
-@import "vendors/slick";
+@import 'vendors/slick';
 
-@import "vendors/slick-theme";
+@import 'vendors/slick-theme';

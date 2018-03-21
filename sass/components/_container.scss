@@ -1,12 +1,12 @@
 .container {
-  width: 100%;
-  min-width: 320px;
-  max-width: 1370px;
   margin: 0 auto;
+  max-width: 1370px;
+  min-width: 320px;
+  width: 100%;
 
   header & {
-    display: flex;
     align-items: center;
+    display: flex;
 
     @include break-point(sm) {
       flex-direction: column;

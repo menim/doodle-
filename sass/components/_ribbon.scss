@@ -1,27 +1,26 @@
 .doodle-item__ribbon {
-  position: absolute;
-  font-size: 1.1rem;
-  height: 59px;
-  right: 0;
-  transition: all 500ms ease-in;
+  border: 0;
   bottom: 55px;
   color: $white;
   cursor: pointer;
-  text-transform: uppercase;
-  padding: 0 1.2em;
   display: block;
-  border: 0;
+  font-size: 1.1rem;
+  height: 59px;
+  padding: 0 1.2em;
+  position: absolute;
+  right: 0;
+  text-transform: uppercase;
 
   @include break-point(sm) {
-    margin: 0 auto;
-    text-align: center;
+    margin: 55px auto 0;
     position: relative;
-    margin-top: 55px;
+    text-align: center;
   }
 }
 
 .clicked-ribbon {
-   .doodle-item__ribbon {
-     left: 0;
-   }
+
+  .doodle-item__ribbon {
+    left: 0;
+  }
 }

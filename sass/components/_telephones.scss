@@ -1,15 +1,11 @@
 .telephones {
   color: $cactus;
-  margin-right: 2.5em;
   font-size: 1.25rem;
+  margin-right: 2.5em;
 
-  header & {
-    margin-left: auto;
-  }
-
-  @include break-point($header-hlg-max) {
-    font-size: 1.1rem;
-    margin-right: 2em;
+  @include break-point(sm) {
+    margin-bottom: 2em;
+    margin-right: 0;
   }
 
   @include break-point(lg) {
@@ -17,31 +13,35 @@
     margin-right: 1.5rem;
   }
 
-  @include break-point(sm) {
-    margin-right: 0;
-    margin-bottom: 2em;
-      
-      header & {
-        margin-left: 0;
-      }
+  @include break-point($header-hlg-max) {
+    font-size: 1.1rem;
+    margin-right: 2em;
+  }
+
+  header & {
+    margin-left: auto;
+
+    @include break-point(sm) {
+      margin-left: 0;
+    }
   }
 
   div {
     display: inline-block;
     line-height: 1.5em;
-    vertical-align: middle;
     margin-top: -.25em;
+    vertical-align: middle;
 
-    @include break-point($header-hlg-max) {
-      margin-top: 0;
+    @include break-point(sm) {
+      display: block;
     }
 
     @include break-point(md) {
       display: none;
     }
 
-    @include break-point(sm) {
-      display: block;
+    @include break-point($header-hlg-max) {
+      margin-top: 0;
     }
   }
 }

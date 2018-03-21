@@ -1,25 +1,25 @@
 .hamburger-btn {
-  display: none;
-  position: absolute;
-  overflow: hidden;
-  top: 45px;
-  margin: 0;
-  padding: 0;
-  width: 45px;
-  height: 45px;
-  font-size: 0;
-  text-indent: -9999px;
   appearance: none;
-  box-shadow: none;
-  border-radius: none;
-  border: 0;
-  cursor: pointer;
   background: transparent;
+  border: 0;
+  border-radius: none;
+  box-shadow: none;
+  cursor: pointer;
+  display: none;
+  font-size: 0;
+  height: 45px;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  text-indent: -9999px;
+  top: 45px;
   transition: background .3s;
+  width: 45px;
 
   @include break-point(sm) {
-    display: block;
     align-self: left;
+    display: block;
   }
 
   &:focus {
@@ -27,34 +27,34 @@
   }
 
   span {
-    display: block;
-    position: absolute;
-    top: 20px;
-    left: 5px;
-    right: 5px;
-    height: 4px;
     background: $sandal;
+    display: block;
+    height: 4px;
+    left: 5px;
+    position: absolute;
+    right: 5px;
+    top: 20px;
     transition: background 0s .3s;
 
-    &:before,
-    &:after {
-      position: absolute;
-      display: block;
-      left: 0;
-      width: 100%;
-      height: 4px;
+    &::before,
+    &::after {
       background-color: $sandal;
-      content: "";
-      transition-duration: .3s, .3s;
+      content: '';
+      display: block;
+      height: 4px;
+      left: 0;
+      position: absolute;
       transition-delay: .3s, 0s;
+      transition-duration: .3s, .3s;
+      width: 100%;
     }
 
-    &:before {
+    &::before {
       top: -10px;
       transition-property: top, transform;
     }
 
-    &:after {
+    &::after {
       bottom: -10px;
       transition-property: bottom, transform;
     }
@@ -66,17 +66,17 @@
   span {
     background: none;
 
-    &:after,
-    &:before {
+    &::after,
+    &::before {
       transition-delay: 0s, .3s;
     }
 
-    &:before {
+    &::before {
       top: 0;
       transform: rotate(45deg);
     }
 
-    &:after {
+    &::after {
       bottom: 0;
       transform: rotate(-45deg);
     }

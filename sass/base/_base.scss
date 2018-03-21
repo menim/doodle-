@@ -6,8 +6,8 @@
 
 html,
 body {
-  margin: 0;
   height: 100%;
+  margin: 0;
 }
 
 body {
@@ -15,13 +15,13 @@ body {
 }
 
 button {
-  border: none;
+  border: 0;
   padding: 0;
 }
 
 ul {
-  padding-left: 0;
   margin: 0;
+  padding-left: 0;
 }
 
 li {
@@ -29,15 +29,10 @@ li {
 }
 
 a {
-  text-decoration: none;
-  font-size: 1.0625rem;
   color: $sandal;
+  font-size: 1.0625rem;
   font-weight: 500;
-
-  &:hover {
-    padding-bottom: 2px;
-    border-bottom: 2px $sandal solid;
-  }
+  text-decoration: none;
 
   @include break-point($header-hlg-max) {
     font-size: 1rem;
@@ -46,6 +41,11 @@ a {
   @include break-point(lg) {
     font-size: .9rem;
   }
+
+  &:hover {
+    border-bottom: 2px $sandal solid;
+    padding-bottom: 2px;
+  }
 }
 
 p {
@@ -53,32 +53,34 @@ p {
 }
 
 fieldset {
-  border: none;
+  border: 0;
   float: left;
   margin-right: 2.5em;
   padding: 0 0 0 1em;
 
-  @include break-point(lg) {
-    margin-right: 2em;
-    padding-left: .5em;
+  @include break-point(sm) {
+    float: none;
+    margin: 0;
+    padding-left: 0;
+    text-align: center;
   }
 
   @include break-point(md) {
     margin-right: 1em;
   }
 
-  @include break-point(sm) {
-    float: none;
-    text-align: center;
-    padding-left: 0;
-    margin: 0;
+  @include break-point(lg) {
+    margin-right: 2em;
+    padding-left: .5em;
   }
 }
 
 label {
-  display: block;
-  text-align: left;
   color: $cactus;
+  display: block;
+  font-size: 1.0625rem;
+  position: relative;
+  text-align: left;
 }
 
 textarea {
@@ -89,46 +91,41 @@ textarea {
 
 input {
   display: block;
-  margin-bottom: 1.375em;
   height: 45px;
+  margin-bottom: 1.375em;
 }
 
 input,
 textarea {
-  border-radius: 4px;
-  border: 1px solid $cactus;
-  font-size: 1rem;
-  width: 382px;
-  margin-top: .41176em;
   background-color: $ecru-white;
+  border: 1px solid $cactus;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-top: .41176em;
   outline: none;
   padding-left: 1.125em;
+  width: 382px;
 
-  &:focus {
-    box-shadow: inset 1px 2px 3px rgba(10,13,18,.3);
+  @include break-point(xs) {
+    width: 100%;
   }
 
-  @include break-point(lg) {
-    width: 350px;
+  @include break-point(sm) {
+    margin: 0;
+    width: 382px;
   }
 
   @include break-point(md) {
     width: 250px;
   }
 
-  @include break-point(sm) {
-    width: 382px;
-    margin: 0;
+  @include break-point(lg) {
+    width: 350px;
   }
 
-  @include break-point(xs) {
-    width: 100%;
+  &:focus {
+    box-shadow: inset 1px 2px 3px rgba(10,13,18,.3);
   }
-}
-
-label {
-  font-size: 1.0625rem;
-  position: relative;
 }
 
 img {
@@ -137,25 +134,25 @@ img {
 }
 
 .headline {
+  background-color: $bianca;
+  color: $cactus;
   font-family: $font-family-2;
   font-size: 4.75rem;
   line-height: 1;
-  color: #596952;
-  background-color: $bianca;
-  text-align: center;
   margin: 0 auto;
   padding: .75em 0 .57894em;
   position: relative;
+  text-align: center;
+
+  @include break-point(450px) {
+    font-size: 1.75rem;
+  }
 
   @include break-point(md) {
     font-size: 3.75rem;
     padding-left: .01em;
     padding-right: .01em;
   }
-
-  @include break-point(450px) {
-    font-size: 1.75rem;
-  }
 }
 
-@include font-face(m-webfont,"../fonts/m-webfont");
+@include font-face(m-webfont, '../fonts/m-webfont');

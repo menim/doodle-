@@ -10,6 +10,16 @@ nav {
     display: inline-block;
     margin-right: 1.625em;
 
+    @include break-point(sm) {
+      display: block;
+      line-height: 2.5em;
+      margin-right: 0;
+    }
+
+    @include break-point(lg) {
+      margin-right: 1.2em;
+    }
+
     a {
 
       @include break-point(sm) {
@@ -17,16 +27,6 @@ nav {
         font-size: 1.0625rem;
         text-transform: uppercase;
       }
-    }
-
-    @include break-point(lg) {
-      margin-right: 1.2em;
-    }
-
-    @include break-point(sm) {
-      display: block;
-      line-height: 2.5em;
-      margin-right: 0;
     }
   }
 }

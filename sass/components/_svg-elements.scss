@@ -1,44 +1,43 @@
 .svg-element {
-  transform: scale(.5) rotate(180deg);
-  -ms-transform: scale(.5) rotate(180deg);
   position: absolute;
-  top: -45px;
   right: 150px;
-
-  @include break-point(lg) {
-    right: 105px;
-  }
-
-  @include break-point(sm) {
-    width: 20px;
-    top: -70px;
-  }
+  top: -45px;
+  transform: scale(.5) rotate(180deg);
 
   @include break-point(360px) {
     right: 20px;
   }
+
+  @include break-point(sm) {
+    top: -70px;
+    width: 20px;
+  }
+
+  @include break-point(lg) {
+    right: 105px;
+  }
 }
 
 .svg-element2 {
+  left: 200px;
   position: absolute;
   top: 109px;
-  left: 200px;
-
-  @include break-point(lg) {
-    left: 155px;
-  }
-
-  @include break-point(md) {
-    display: none;
-  }
 
   @include break-point(360px) {
     top: 68px;
   }
 
   @include break-point(sm) {
-    width: 50px;
     display: block;
+    width: 50px;
+  }
+
+  @include break-point(md) {
+    display: none;
+  }
+
+  @include break-point(lg) {
+    left: 155px;
   }
 }
 
@@ -46,8 +45,8 @@
   position: absolute;
   right: 50px;
 
-  @include break-point(lg) {
-    right: 5px;
+  @include break-point(360px) {
+    top: 65px;
   }
 
   @include break-point(sm) {
@@ -55,71 +54,67 @@
     width: 40px;
   }
 
-  @include break-point(360px) {
-    top: 65px;
+  @include break-point(lg) {
+    right: 5px;
   }
 }
 
 .svg-element4 {
-  position: absolute;
   left: 150px;
+  position: absolute;
   top: -13px;
   transform: rotate(180deg);
+
+  @include break-point(sm) {
+    left: 0;
+    top: -9px;
+    width: 50px;
+  }
 
   @include break-point(lg) {
     left: 105px;
   }
-
-  @include break-point(sm) {
-    top: -9px;
-    left: 0;
-    width: 50px;
-  }
 }
 
 .svg-element5 {
-  position: absolute;
   left: 50px;
+  position: absolute;
 
-  @include break-point(lg) {
-    left: 5px;
+  @include break-point(360px) {
+    top: 65px;
   }
 
   @include break-point(sm) {
     width: 40px;
   }
 
-  @include break-point(360px) {
-    top: 65px;
+  @include break-point(lg) {
+    left: 5px;
   }
 }
 
 .svg-element6 {
   position: absolute;
-  top: 106px;
   right: 200px;
+  top: 106px;
   transform: rotate(50deg);
-  -ms-transform: rotate(50deg);
 
   @include break-point(md) {
     display: none;
   }
 
   @include break-point(lg) {
-    right: 155px;   
+    right: 155px;
   }
 }
 
 .loaded {
 
   .st0 {
-    animation: dash 5s linear;
-    -webkit-animation: dash 5s linear;
-    animation-fill-mode: forwards;
-    -webkit-fill-mode: forwards;
+    animation: dash 5s linear forwards;
 
     &.is-filled {
-        fill: gray;
+      fill: $tuna;
     }
   }
 }

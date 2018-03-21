@@ -1,17 +1,25 @@
 .contacts {
+  color: $mine-shaft;
   display: inline-block;
   font-size: 1.325rem;
-  color: $mine-shaft;
   margin-left: 3.2857em;
-  position: relative;
   margin-right: .9em;
+  position: relative;
   top: -87px;
 
-  li {
 
-    @include break-point(sm) {
-      margin-bottom: .5em;
-    }
+  @include break-point(480px) {
+    display: block;
+  }
+
+  @include break-point(sm) {
+    margin: 0;
+    padding-top: 1em;
+    top: 0;
+  }
+
+  @include break-point(md) {
+    font-size: 1rem;
   }
 
   @include break-point(lg) {
@@ -19,17 +27,10 @@
     margin-left: 0;
   }
 
-  @include break-point(md) {
-    font-size: 1rem;
-  }
+  li {
 
-  @include break-point(sm) {
-    top: 0;
-    margin: 0;
-    padding-top: 1em;
-  }
-
-  @include break-point(480px) {
-    display: block;
+    @include break-point(sm) {
+      margin-bottom: .5em;
+    }
   }
 }

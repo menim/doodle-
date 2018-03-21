@@ -1,4 +1,4 @@
-/*colors  var*/
+//colors  var
 
 $black: #000;
 $sandal: #a9916a;
@@ -22,26 +22,24 @@ $plum: #92278f;
 $fuchsia-pink: #c65ac4;
 $coral-red: #f93349;
 $french-lilac: #e4b7e5;
-$froly:#f77f89;
+$froly: #f77f89;
 $rose-bud: #fba9b4;
 $caper: #cae7a6;
 $wild-willow: #a1cb7b;
 $gallery: #ebebeb;
 $ecru-white: #f7f7ed;
 
-/* fonts */
+//fonts
 
 $font-size-base: 16px;
-$font-family-1: "Roboto",Arial, sans-serif;
-$font-family-2: "m-webfont";
+$font-family-1: 'Roboto', Arial, sans-serif;
+$font-family-2: 'm-webfont';
 $footer-btn-font: 15px;
 
-/*breakpoints*/
+//breakpoints
 
 $screen-xs-max: 767px;
 $screen-sm-max: 991px;
 $screen-md-max: 1199px;
 $screen-xs-min: 480px;
 $header-hlg-max: 1289px;
-
-/*  paddings and margins */

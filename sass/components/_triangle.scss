@@ -1,19 +1,19 @@
 .triangle {
-  transform: rotate(0deg);
-  transition: transform 500ms ease-in;
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-top: 12px solid transparent;
   border-bottom: 12px solid transparent;
-  border-left: 12px solid #fff;
-  opacity: .45;
+  border-left: 12px solid $white;
+  border-top: 12px solid transparent;
+  display: inline-block;
+  height: 0;
   margin-bottom: -6px;
   margin-right: 5px;
+  opacity: .45;
+  transform: rotate(0deg);
+  transition: transform 500ms ease-in;
+  width: 0;
 
   &.rotate {
-    transition: transform 500ms ease-out;
     transform: rotate(180deg);
+    transition: transform 500ms ease-out;
   }
 
   &:nth-child(1) {

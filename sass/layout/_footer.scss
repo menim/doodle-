@@ -1,11 +1,11 @@
 .footer {
   background: $amethyst;
-  background: rgba($amethyst,.5) url("../images/footer-bg.jpg") no-repeat;
+  background: rgba($amethyst, .5) url('../images/footer-bg.jpg') no-repeat;
   background-size: cover;
 
   .footer-wrapper {
     background-color: $white;
-    background-color: rgba($white,.5);
+    background-color: rgba($white, .5);
 
     .footer-wrapper-content {
       overflow: hidden;
@@ -13,16 +13,17 @@
       text-align: center;
 
       h3 {
+        color: $tuna;
         font-family: $font-family-2;
         font-size: 1.25rem;
-        text-align: center;
         margin: 3.55em 0 3.4em;
-        color: #3b3b3e;
+        text-align: center;
       }
     }
 
     form {
       @extend %clearfix;
+
       display: inline-block;
       text-align: left;
     }
@@ -30,23 +31,20 @@
 
   .field-block {
 
-    @include break-point(sm) {
-      display: inline-block;
-      margin-top: 1em;
-    }
-
     @include break-point(xs) {
       display: block;
       width: 100%;
     }
+
+    @include break-point(sm) {
+      display: inline-block;
+      margin-top: 1em;
+    }
   }
 
   .basic-btn {
-    @include basic-btn($white,$plum,.8235em,1.3125em,$footer-btn-font);
+    @include basic-btn($white, $plum, .8235em, 1.3125em, $footer-btn-font);
 
-    &:focus {
-      outline: none;
-    }
 
     @include break-point(sm) {
       margin-top: 2.5em;
