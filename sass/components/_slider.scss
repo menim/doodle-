@@ -24,12 +24,6 @@
     width: 50px;
     z-index: 1;
 
-
-    &:focus {
-      background-color: $gallery;
-      outline-style: auto;
-    }
-
     &:hover {
       background-color: $black;
 
