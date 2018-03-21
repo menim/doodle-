@@ -46,6 +46,11 @@ a {
     border-bottom: 2px $sandal solid;
     padding-bottom: 2px;
   }
+
+  &:active,
+  &:hover {
+    outline-width: 0;
+  }
 }
 
 p {
