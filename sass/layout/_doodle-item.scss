@@ -74,7 +74,7 @@
 }
 
 .doodle-item__description {
-  flex: 1 1 50%;
+  flex: 1;
 
   @include break-point(sm) {
     text-align: center;
@@ -162,7 +162,7 @@
 .doodle-item__images {
   align-items: center;
   display: flex;
-  flex: 1 1 50%;
+  flex: 1;
   justify-content: center;
 
   @include break-point(sm) {
