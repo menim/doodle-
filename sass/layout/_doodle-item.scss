@@ -33,11 +33,6 @@
   position: relative;
   transition: transform 500ms ease-in;
 
-  .full {
-    min-height: 100%;
-    transition: min-height .25s ease-in;
-  }
-
   &.clicked {
     transform: translateX(-100%);
     transition: transform 500ms ease-out;
