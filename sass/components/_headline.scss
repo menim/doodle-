@@ -1,0 +1,21 @@
+.headline {
+  background-color: $bianca;
+  color: $cactus;
+  font-family: $font-family-2;
+  font-size: 4.75rem;
+  line-height: 1;
+  margin: 0 auto;
+  padding: .75em 0 .57894em;
+  position: relative;
+  text-align: center;
+
+  @include break-point(450px) {
+    font-size: 1.75rem;
+  }
+
+  @include break-point(md) {
+    font-size: 3.75rem;
+    padding-left: .01em;
+    padding-right: .01em;
+  }
+}
