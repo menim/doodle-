@@ -9,11 +9,12 @@
   line-height: 1;
   padding: $vertical-padding $gorizont-padding;
   text-align: center;
+  text-decoration: none;
   transform: translateZ(0);
   transition: transform .3s linear;
 
   &::before {
-    background: radial-gradient(ellipse at center, rgba(0, 0, 0, .35) 0%, rgba(0, 0, 0, 0) 80%);
+    background: radial-gradient(ellipse at center, $black-with-alpha-35  0%, $black-with-alpha-0 80%);
     content: '';
     height: 10px;
     left: 5%;

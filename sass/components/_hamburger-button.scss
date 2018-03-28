@@ -5,64 +5,53 @@
   border-radius: none;
   box-shadow: none;
   cursor: pointer;
-  display: none;
   font-size: 0;
   height: 45px;
-  margin: 0;
   overflow: hidden;
-  padding: 0;
-  position: absolute;
   text-indent: -9999px;
-  top: 45px;
   transition: background .3s;
   width: 45px;
-
-  @include break-point(sm) {
-    align-self: left;
-    display: block;
-  }
 
   &:focus {
     outline: none;
   }
+}
 
-  span {
-    background: $sandal;
+.hamburger-btn__strokes {
+  background: $sandal;
+  display: block;
+  height: 4px;
+  left: 5px;
+  position: absolute;
+  right: 5px;
+  top: 20px;
+  transition: background 0s .3s;
+
+  &::before,
+  &::after {
+    background-color: $sandal;
+    content: '';
     display: block;
     height: 4px;
-    left: 5px;
+    left: 0;
     position: absolute;
-    right: 5px;
-    top: 20px;
-    transition: background 0s .3s;
+    transition-delay: .3s, 0s;
+    transition-duration: .3s, .3s;
+    width: 100%;
+  }
 
-    &::before,
-    &::after {
-      background-color: $sandal;
-      content: '';
-      display: block;
-      height: 4px;
-      left: 0;
-      position: absolute;
-      transition-delay: .3s, 0s;
-      transition-duration: .3s, .3s;
-      width: 100%;
-    }
+  &::before {
+    top: -10px;
+    transition-property: top, transform;
+  }
 
-    &::before {
-      top: -10px;
-      transition-property: top, transform;
-    }
-
-    &::after {
-      bottom: -10px;
-      transition-property: bottom, transform;
-    }
+  &::after {
+    bottom: -10px;
+    transition-property: bottom, transform;
   }
 }
 
-.is-active {
-
+.hamburger-btn_active {
   span {
     background: none;
 

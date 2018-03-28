@@ -1,52 +1,36 @@
 .telephones {
   color: $cactus;
   font-size: 1.25rem;
-  margin-right: 2.5em;
-
-  @include break-point(sm) {
-    margin-bottom: 2em;
-    margin-right: 0;
-  }
-
+  
   @include break-point(lg) {
     font-size: 1rem;
-    margin-right: 1.5rem;
   }
 
   @include break-point($header-hlg-max) {
     font-size: 1.1rem;
-    margin-right: 2em;
-  }
-
-  header & {
-    margin-left: auto;
-
-    @include break-point(sm) {
-      margin-left: 0;
-    }
-  }
-
-  div {
-    display: inline-block;
-    line-height: 1.5em;
-    margin-top: -.25em;
-    vertical-align: middle;
-
-    @include break-point(sm) {
-      display: block;
-    }
-
-    @include break-point(md) {
-      display: none;
-    }
-
-    @include break-point($header-hlg-max) {
-      margin-top: 0;
-    }
   }
 }
 
-.telephones-item {
+.telephones__group {
+  display: inline-block;
+  line-height: 1.5em;
+  margin-top: -.25em;
+  vertical-align: middle;
+
+  @include break-point($header-hlg-max) {
+    margin-top: 0;
+  } 
+
+  @include break-point(md) {
+    display: none;
+  }
+
+  @include break-point(sm) {
+    display: block;
+  }
+}
+
+.telephones__item {
   margin: auto .75em;
 
   @include break-point(lg) {

@@ -125,7 +125,7 @@ var hamburger_btn = document.querySelector('.hamburger-btn');
 var header = document.querySelector("header");
 var headWrapper = document.querySelector("header .container");
 var h = headWrapper.clientHeight;
-var additionalClass = ' is-active';
+var additionalClass = ' hamburger-btn_active';
 
 hamburger_btn.addEventListener('click', function() {
   if (parseInt(header.style.height) !== h) {
@@ -133,7 +133,7 @@ hamburger_btn.addEventListener('click', function() {
     header.style.height = h + 'px';
   } else {
     header.style.height = '130px';
-    this.className = this.className.replace(' is-active', '');
+    this.className = this.className.replace(' hamburger-btn_active', '');
   }
 });
 

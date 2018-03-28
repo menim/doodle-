@@ -1,32 +1,38 @@
-nav {
-  padding: 0 .3125em;
+.menu__item {
+  display: inline-block;
+  margin-right: 1.625em;
 
   @include break-point(lg) {
-    padding: 0;
+    margin-right: 1.2em;
   }
 
-  li {
+  @include break-point(sm) {
+    display: block;
+    line-height: 2.5em;
+    margin-right: 0;
+  }
+}
 
-    display: inline-block;
-    margin-right: 1.625em;
+.menu__link {
+  color: $sandal;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  text-decoration: none;
 
-    @include break-point(sm) {
-      display: block;
-      line-height: 2.5em;
-      margin-right: 0;
-    }
+  @include break-point($header-hlg-max) {
+    font-size: 1rem;
+  }
 
-    @include break-point(lg) {
-      margin-right: 1.2em;
-    }
+  @include break-point(lg) {
+    font-size: .9rem;
+  }
 
-    a {
+  @include break-point(sm) {
+    font-size: 1.0625rem;
+  }
 
-      @include break-point(sm) {
-        display: block;
-        font-size: 1.0625rem;
-        text-transform: uppercase;
-      }
-    }
+  &:hover {
+    border-bottom: 2px $sandal solid;
+    padding-bottom: 2px;
   }
 }

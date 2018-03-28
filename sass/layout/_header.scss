@@ -14,24 +14,54 @@
     overflow: hidden;
     text-align: center;
   }
+}
 
-  .basic-btn {
-    @include basic-btn($white, $cactus, .8235em, 2.9375em);
+.header__logo {
+  @include break-point(sm) {
+    margin: 2em 0;
+  }
+}
 
-    @include break-point(sm) {
-      @include basic-btn($white, $cactus, .8235em, 2.9375em);
+.header__telephones {
+  margin-left: auto; 
+  margin-right: 2.5em;  
 
-      margin: 2em 0;
-    }
-
-    @include break-point(lg) {
-      @include basic-btn($white, $cactus, .6235em, 1.9375em);
-    }
+  @include break-point($header-hlg-max) {
+    margin-right: 2em;
   }
 
-  .logo {
-    @include break-point(sm) {
-      margin: 2em 0;
-    }
+  @include break-point(lg) {
+    margin-right: 1.5rem;
+  }
+
+  @include break-point(sm) {
+    margin-bottom: 2em;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.header__hamburger-btn {
+  display: none;
+  position: absolute;
+  top: 45px;
+
+  @include break-point(sm) {
+    align-self: left;
+    display: block;
+  }
+}
+
+.header__menu {
+  padding: 0 .3125em;
+
+  @include break-point(lg) {
+    padding: 0;
+  }
+}
+
+.header__basic-btn {
+  @include break-point(sm) {
+    margin: 2em 0;
   }
 }
