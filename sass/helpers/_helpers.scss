@@ -18,6 +18,16 @@
   }
 }
 
+.svg-path {
+  animation: dash 5s linear forwards;
+}
+
+@keyframes dash {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
 .active {
   height: auto;
   overflow: auto;

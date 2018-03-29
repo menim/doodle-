@@ -22,8 +22,6 @@ $(document).ready(function() {
     mobilefirst: true,
   });
 
-  document.body.className += ' loaded';
-
   /* Appear images and text on main page, when scroll */
 
   var windowVar = $(window);
@@ -111,7 +109,7 @@ $(document).ready(function() {
   /* Fill all svg images */
 
   setTimeout(function() {
-    var el = document.querySelectorAll(".st0");
+    var el = document.querySelectorAll(".svg-path");
     var len = el.length;
     for (var i = 0; i < len; i++) {
       el[i].setAttribute('fill', 'gray');

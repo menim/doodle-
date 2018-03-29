@@ -19,3 +19,113 @@
     padding-right: .01em;
   }
 }
+
+.headline__svg-tree-circles {
+  position: absolute;
+  right: 150px;
+  top: -45px;
+  transform: scale(.5) rotate(180deg);
+
+  @include break-point(lg) {
+    right: 105px;
+  }
+
+  @include break-point(sm) {
+    top: -70px;
+    width: 20px;
+  }
+
+  @include break-point(360px) {
+    right: 20px;
+  }
+}
+
+.headline__svg-flower {
+  left: 200px;
+  position: absolute;
+  top: 109px;
+
+  @include break-point(lg) {
+    left: 155px;
+  }
+
+  @include break-point(md) {
+    display: none;
+  }
+
+  @include break-point(sm) {
+    display: block;
+    width: 50px;
+  }
+
+  @include break-point(360px) {
+    top: 68px;
+  }
+}
+
+.headline__svg-flower-bud {
+  position: absolute;
+  right: 50px;
+
+  @include break-point(lg) {
+    right: 5px;
+  }
+
+  @include break-point(sm) {
+    right: 15px;
+    width: 40px;
+  }
+
+  @include break-point(360px) {
+    top: 65px;
+  }
+}
+
+.headline__svg-tree-with-hurts {
+  left: 150px;
+  position: absolute;
+  top: -13px;
+  transform: rotate(180deg);
+
+  @include break-point(sm) {
+    left: 0;
+    top: -9px;
+    width: 50px;
+  }
+
+  @include break-point(lg) {
+    left: 105px;
+  }
+}
+
+.headline__svg-curve {
+  left: 50px;
+  position: absolute;
+
+  @include break-point(lg) {
+    left: 5px;
+  }
+
+  @include break-point(sm) {
+    width: 40px;
+  }
+
+  @include break-point(360px) {
+    top: 65px;
+  }
+}
+
+.headline__svg-tree {
+  position: absolute;
+  right: 200px;
+  top: 106px;
+  transform: rotate(50deg);
+
+  @include break-point(lg) {
+    right: 155px;
+  }
+
+  @include break-point(md) {
+    display: none;
+  }
+}
