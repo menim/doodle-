@@ -6,12 +6,6 @@
     display: none;
   }
 
-  .doodle-slider-wrapper {
-    margin: 0 auto;
-    max-width: 1366px;
-    overflow: hidden;
-  }
-
   .slick-list {
     z-index: 0;
   }
@@ -62,6 +56,12 @@
       width: 50%;
     }
   }
+}
+
+.doodle-slider__wrapper {
+  margin: 0 auto;
+  max-width: 1366px;
+  overflow: hidden;
 }
 
 

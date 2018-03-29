@@ -13,7 +13,7 @@ $(document).ready(function() {
     },
   });
 
-  $('#doodle-slider-wrapper').slick({
+  $('#doodle-slider__wrapper').slick({
     infinite: true,
     speed: 1000,
     fade: true,
