@@ -5,37 +5,25 @@
   @include break-point(md) {
     padding: 2.375em 0;
   }
+}
 
-  h3 {
-    color: $cactus;
-    font: 400 1.25rem $font-family-2;
-    margin-bottom: 2.1em;
-    margin-top: 0;
-    text-align: center;
+.doodle-others-projects__header {
+  color: $cactus;
+  font: 400 1.25rem $font-family-2;
+  margin-bottom: 2.1em;
+  margin-top: 0;
+  text-align: center;
 
-    @include break-point(md) {
-      font-size: 1rem;
-    }
+  @include break-point(md) {
+    font-size: 1rem;
   }
+}
 
-  a {
-    margin-right: 2.01em;
+.doodle-others-projects__item {
+  width: 30%;
 
-    @include break-point(sm) {
-      margin-right: 0;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
-
-    img {
-      width: 30%;
-
-      @include break-point(sm) {
-        margin-bottom: 2em;
-        width: 80%;
-      }
-    }
+  @include break-point(sm) {
+    margin-bottom: 2em;
+    width: 80%;
   }
 }
