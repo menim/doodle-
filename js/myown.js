@@ -24,7 +24,7 @@ $(document).ready(function() {
 
   /* Appear images and text on main page, when scroll */
 
-  var windowVar = $(window);
+/*  var windowVar = $(window);
   var hideme = $(".hideme");
   var hidemeLen = hideme.length;
 
@@ -42,7 +42,7 @@ $(document).ready(function() {
         }
       }
     }
-  });
+  });*/
 
   /* scroll to*/
 
@@ -87,22 +87,22 @@ $(document).ready(function() {
       items = container.find('.doodle-item__container');
       frstChild = items.eq(0);
       secChild = items.eq(1);
-      elem = container.find('.preview');
+/*      elem = container.find('.preview');
       elemLen = elem.length;
-      containerPreview = elem.parent();
+      containerPreview = elem.parent();*/
 
-      frstChild.toggleClass('clicked');
-      secChild.toggleClass('clicked-two');
-      self.parent().toggleClass('clicked-ribbon');
-      self.children().toggleClass('rotate');
+      frstChild.toggleClass('doodle-item__container_translate_left');
+      secChild.toggleClass('doodle-item__container_translate_right');
+      self.toggleClass('doodle-item__ribbon_active');
+      self.children().toggleClass('doodle-item__triangle_rotate_180');
 
-      setTimeout(function() {
+/*      setTimeout(function() {
         for (var j = 0; j < elemLen; j++) {
           if ($(elem[j]).css('display') === 'none') {
             $(elem[j]).delay(j * 150).fadeIn(200);
           }
         }
-      }, 800);
+      }, 800);*/
     });
   });
 
@@ -195,7 +195,7 @@ form.addEventListener('submit', function(event) {
 });
 
 /* DETECT SWIPE GESTURE */
-
+/*
 var xDown = null;
 var yDown = null;
 
@@ -205,7 +205,7 @@ $('.doodle-item__container').on('touchstart', function(e) {
 
 $('.doodle-item__container').on('touchmove', function(e) {
   var self = $(this);
-  var ribbon = self.parent().find('.doodle-item__ribbon').find('a').children();
+  var ribbonTriangles = self.parent().find('.doodle-item__ribbon').find('a').children();
   if (!xDown) {
     return;
   }
@@ -213,11 +213,11 @@ $('.doodle-item__container').on('touchmove', function(e) {
   var xUp = e.originalEvent.touches[0].clientX, xDiff = xDown - xUp;
 
   if (xDiff > 100) {
-    self.addClass('clicked');
-    self.next().addClass('clicked-two');
-    ribbon.addClass('rotate');
-    var el = self.next().addClass('clicked-two').find('.preview');
-    var elLen = el.length;
+    self.addClass('doodle__container_translate_left');
+    self.next().toggle('doodle__container_translate_right');
+    ribbonTriangles.addClass('rotate');
+       /*var el = self.next().addClass('clicked-two')/*.find('.preview');
+ var elLen = el.length;
     setTimeout(function() {
       el.each(function(item) {
         for (var k = 0; k < elLen; k++) {
@@ -228,8 +228,8 @@ $('.doodle-item__container').on('touchmove', function(e) {
       });
     }, 800);
   } else if (xDiff < -50) {
-    self.prev().removeClass('clicked');
-    self.removeClass('clicked-two');
-    ribbon.removeClass('rotate');
+    self.prev().removeClass('doodle__container_translate_left');
+    self.next().toggle('doodle__container_translate_right');
+    ribbonTriangles.removeClass('rotate');
   }
-});
+});*/
