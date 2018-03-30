@@ -2,52 +2,164 @@
   background: $amethyst;
   background: rgba($amethyst, .5) url('../images/footer-bg.jpg') no-repeat;
   background-size: cover;
+}
 
-  .footer-wrapper {
-    background-color: $white;
-    background-color: rgba($white, .5);
+.footer__container {
+  background-color: $white;
+  background-color: rgba($white, .5);
+}
 
-    .footer-wrapper-content {
-      overflow: hidden;
-      padding-bottom: 8.5em;
-      text-align: center;
+.footer__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: hidden;
+  padding-bottom: 8.5em;
+  text-align: center;
+}
 
-      h3 {
-        color: $tuna;
-        font-family: $font-family-2;
-        font-size: 1.25rem;
-        margin: 3.55em 0 3.4em;
-        text-align: center;
-      }
-    }
+.footer__header {
+  color: $tuna;
+  font-family: $font-family-2;
+  font-size: 1.25rem;
+  margin: 3.55em 0 3.4em;
+  text-align: center;
+  width: 100%;
+}
 
-    form {
-      @extend %clearfix;
+.footer__form {
+  display: flex;
+  text-align: left;
 
-      display: inline-block;
-      text-align: left;
-    }
+  @include break-point(sm) {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.footer__fieldset {
+  border: 0;
+  margin-right: 2.5em;
+  padding: 0 0 0 1em;
+
+  @include break-point(lg) {
+    margin-right: 2em;
+    padding-left: .5em;
   }
 
-  .field-block {
-
-    @include break-point(xs) {
-      display: block;
-      width: 100%;
-    }
-
-    @include break-point(sm) {
-      display: inline-block;
-      margin-top: 1em;
-    }
+  @include break-point(md) {
+    margin-right: 1em;
   }
 
-  .basic-btn {
-    @include basic-btn($white, $plum, .8235em, 1.3125em, $footer-btn-font);
+  @include break-point(sm) {
+    float: none;
+    margin: 0;
+    padding-left: 0;
+    text-align: center;
+  }
+}
 
+.footer__field-block {
+  @include break-point(sm) {
+    display: inline-block;
+    margin-top: 1em;
+  }
 
-    @include break-point(sm) {
+  @include break-point(xs) {
+    display: block;
+    width: 100%;
+  }
+}
+
+.footer__label {
+  color: $cactus;
+  display: block;
+  font-size: 1.0625rem;
+  position: relative;
+  text-align: left;
+}
+
+.footer__input {
+  background-color: $ecru-white;
+  border: 1px solid $cactus;
+  border-radius: 4px;
+  display: block;
+  font-size: 1rem;
+  margin-top: .41176em;
+  outline: none;
+  padding-left: 1.125em;
+  width: 382px;
+
+  @include break-point(lg) {
+    width: 320px;
+  }
+
+  @include break-point(md) {
+    width: 270px;
+  }
+
+  @include break-point(sm) {
+    margin: 0;
+    width: 382px;
+  }
+
+  @include break-point(xs) {
+    width: 100%;
+  }
+
+  &:focus {
+    box-shadow: inset 1px 2px 3px $input-shadow;
+  }
+}
+
+.footer__input_textarea {
+  padding-top: 1em;
+}
+
+.footer__input_text {
+  height: 45px;
+  margin-bottom: 1.375em;
+}
+
+.footer__contacts {
+  align-self: flex-end;
+  color: $mine-shaft;
+  font-size: 1.325rem;
+  margin-left: 3.2857em;
+  margin-right: .9em;
+  position: relative;
+  top: -87px;
+
+  @include break-point(lg) {
+    font-size: 1.125rem;
+    margin-left: 0;
+  }
+
+  @include break-point(md) {
+    font-size: 1rem;
+  }
+
+  @include break-point(sm) {
+    margin: 0;
+    padding-top: 1em;
+    top: 0;
+  }
+
+  @include break-point(480px) {
+    display: block;
+  }
+}
+
+.footer__list-item {
+  @include break-point(sm) {
+    margin-bottom: .5em;
+  }
+}
+
+.footer__basic-btn {
+  margin-top: 2.8125em; 
+
+  @include break-point(sm) {
       margin-top: 2.5em;
-    }
   }
 }

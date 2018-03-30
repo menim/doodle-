@@ -69,7 +69,7 @@
       </div>
     </section>
     <section class="doodle-quote">
-      <blockquote class="doodle-qoute__text">
+      <blockquote class="doodle-quote__text">
         <span class="no-wr">Графическая визуализация развивает все виды интеллекта,</span> 
         <span class="no-wr">активизирует оба полушария мозга: левое и правое</span>
       </blockquote>
@@ -246,49 +246,49 @@
       </button>
     </section>
     <section class="doodle-others-projects container" id="other-projects">
-      <h3>
+      <h3 class="doodle-others-projects__header">
         Другие серии от издательства Артоко
       </h3>   
-      <a href="http://sketchbooki.info"><img src="images/sketchbook-link.jpg" alt="сайт про Sketchbook" /></a>
+      <a href="http://sketchbooki.info"><img class="doodle-others-projects__item" src="images/sketchbook-link.jpg" alt="сайт про Sketchbook" /></a>
     </section>
     <footer class="footer">
-      <div class="footer-wrapper">
-        <div class="footer-wrapper-content container">
-          <h3>Заказать doodle book</h3>
-          <form id="contact-form" action="contact.php" method="POST" >
-            <fieldset>
-              <div class="field-block">
-                <label for="name">Ваше имя:
-                  <input id="name" type="text" name="name" />
+      <div class="footer__container">
+        <div class="footer__wrapper">
+          <h3 class="footer__header">Заказать doodle book</h3>
+          <form id="contact-form" class="footer__form" action="contact.php" method="POST" >
+            <fieldset class="footer__fieldset">
+              <div class="footer__field-block">
+                <label class="footer__label" for="name">Ваше имя:
+                  <input class="footer__input footer__input_text" id="name" type="text" name="name" />
                   <span class="error"></span>
                 </label>
               </div>
-              <div class="field-block">
-                <label for="email">Email:
-                <input id="email" type="email" name="email" />
+              <div class="footer__field-block">
+                <label class="footer__label" for="email">Email:
+                <input class="footer__input footer__input_text" id="email" type="email" name="email" />
                 <span class="error"></span>
                 </label>
               </div>
             </fieldset> 
-            <fieldset>
+            <fieldset class="footer__fieldset">
               <!--<label for="quantity">Укажите количество:</label>
               <input id="quantity" type="text" />-->
-              <div class="field-block">
-                <label for="message">Текст вашего сообщения:
-                  <textarea name="message" id="message" cols="30" rows="10"></textarea>
+              <div class="footer__field-block">
+                <label class="footer__label" for="message">Текст вашего сообщения:
+                  <textarea class="footer__input footer__input_textarea" name="message" id="message" cols="30" rows="10"></textarea>
                   <span class="error"></span>
                 </label>
-                <button type="submit" id="submit-btn" class="basic-btn">Отправить запрос</button>
+                <button type="submit" id="submit-btn" class="basic-btn basic-btn_theme_purple footer__basic-btn">Отправить запрос</button>
               </div>
             </fieldset> 
           </form>
-          <div class="contacts" id="contacts">
-            <ul>
-              <li>+38 050 364 26 87</li>
-              <li>+38 066 754 95 64 </li>
-              <li>+38 097 025 86 46</li>
-              <li>+38 093 139 67 04</li>
-              <li>mail@okobook.com</li>
+          <div class="footer__contacts" id="contacts">
+            <ul class="footer__list">
+              <li class="footer__list-item">+38 050 364 26 87</li>
+              <li class="footer__list-item">+38 066 754 95 64 </li>
+              <li class="footer__list-item">+38 097 025 86 46</li>
+              <li class="footer__list-item">+38 093 139 67 04</li>
+              <li class="footer__list-item">mail@okobook.com</li>
             </ul>
           </div>
         </div>
