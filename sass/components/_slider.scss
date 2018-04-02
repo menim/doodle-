@@ -18,6 +18,10 @@
     width: 50px;
     z-index: 1;
 
+    &:focus {
+      background-color: $gallery;
+    }
+
     &:hover {
       background-color: $black;
 
