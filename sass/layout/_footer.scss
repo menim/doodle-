@@ -16,6 +16,10 @@
   overflow: hidden;
   padding-bottom: 8.5em;
   text-align: center;
+
+  @include break-point(sm) {
+    padding-bottom: 4.5em;
+  }
 }
 
 .footer__header {
