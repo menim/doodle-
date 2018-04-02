@@ -25,6 +25,10 @@
   margin: 3.55em 0 3.4em;
   text-align: center;
   width: 100%;
+
+  @include break-point(sm) {
+    margin: 2.55em 0 2.4em;
+  }
 }
 
 .footer__form {
