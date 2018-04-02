@@ -1,0 +1,45 @@
+
+
+# add background to focus state on slick button
+# Please enter the commit message for your changes. Everything below
+# this paragraph is ignored, and an empty message aborts the commit.
+# Just close the window to accept your message.
+On branch master
+Your branch is ahead of 'origin/master' by 14 commits.
+  (use "git push" to publish your local commits)
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+  modified:   _slider.scss
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+  modified:   ../../Gruntfile.js
+  modified:   ../../css/main.css
+  modified:   ../../css/main.css.map
+  modified:   ../../images/artbook-link.png
+  modified:   ../../images/doodle-logo.png
+  modified:   ../../images/doodle-ok-shadow.png
+  modified:   ../../images/doodle-ok.png
+  modified:   ../../images/doodle-ok2-shadow.png
+  modified:   ../../images/doodle-ok2.png
+  modified:   ../../images/doodle-simple-step-shadow.png
+  modified:   ../../images/doodle-simple-step.png
+  modified:   ../../images/doodle-simple-step1.png
+  modified:   ../../images/doodle-simple-step2-shadow.png
+  modified:   ../../images/ok-doodle.png
+  modified:   ../../images/step-doodle.png
+  modified:   ../../images/visual-doodle-cover1.png
+  modified:   ../../images/visual-doodle-cover2.png
+  modified:   ../../images/visual-doodle-shadow.png
+  modified:   ../../images/visual-doodle.png
+  modified:   ../../images/visual-doodle2-shadow.png
+  modified:   ../../main.css
+  modified:   ../../main.css.map
+  modified:   ../../package-lock.json
+  modified:   _doodle-quote.scss
+  deleted:    _ribbon.scss
+  deleted:    _svg-elements.scss
+  deleted:    _triangle.scss

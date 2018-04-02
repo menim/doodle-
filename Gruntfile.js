@@ -53,7 +53,7 @@ module.exports=function(grunt) {
     csslint: {
       src: ['css/main.css'],
     },
-/*    imageoptim: {
+    imageoptim: {
       myTask: {
         options: {
           jpegMini: false,
@@ -62,7 +62,7 @@ module.exports=function(grunt) {
         },
         src: ['images'],
       },
-    },*/
+    },
     cssmin: {
       target: {
         files: [
@@ -86,7 +86,7 @@ module.exports=function(grunt) {
       options: {
         map: true,
         processors: [
-          require('autoprefixer')([
+            require('autoprefixer')([
             'Android 2.3',
             'Android >= 4',
             'Chrome >= 20',
@@ -99,7 +99,7 @@ module.exports=function(grunt) {
         ],
       },
       dist: {
-        src: '*.css',
+        src: 'css/main.css',
       },
     },
     watch: {
@@ -171,7 +171,7 @@ module.exports=function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browser-sync');
-/*  grunt.loadNpmTasks('grunt-imageoptim');*/
+  grunt.loadNpmTasks('grunt-imageoptim');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-csslint');
