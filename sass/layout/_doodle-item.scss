@@ -132,9 +132,10 @@
 }
 
 .doodle-item__paragraph {
+  line-height: 1.6;
+
   @include break-point(lg) {
     font-size: .9rem;
-    line-height: 1.6em;
   }
 
   @include break-point(md) {
