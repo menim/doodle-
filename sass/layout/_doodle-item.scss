@@ -158,7 +158,6 @@
   display: flex;
   flex: 50%;
   justify-content: center;
-  transition: transform, opacity .3s ease-in;
 
   @include break-point(sm) {
     margin: 2em 0;
@@ -240,18 +239,4 @@
 
 .doodle-item__basic-btn {
   margin-top: 5.294em;
-}
-
-.hide-left {
-  transition: right, opacity .3s ease-in;
-  opacity: 0;
-  position: relative;
-  right: 100%;
-}
-
-.hide-right { 
-  transition: left, opacity .3s ease-in;
-  left: 100%;
-  position: relative;
-  opacity: 0;
 }

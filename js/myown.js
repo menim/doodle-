@@ -23,12 +23,28 @@ $(document).ready(function() {
   });
 
   /* Appear images and text on main page, when scroll */
+var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+var items = document.querySelectorAll('[class*="hide"]');
+
+window.addEventListener('resize', function() {
+  viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+});
+
+window.addEventListener('scroll', function() {
+  items.forEach(function(item) {
+    if (item.getBoundingClientRect().top < viewHeight) {
+      if (item.className.indexOf('show') === -1) {
+        item.className += ' show';
+      }
+    }
+  });
+});
 
 /*  var windowVar = $(window);
-  var hideme = $(".hideme");
-  var hidemeLen = hideme.length;
+    var hideme = $(".hideme");
+    var hidemeLen = hideme.length;
 
-  windowVar.scroll(function() {
+    windowVar.scroll(function() {
     for (var i = 0; i < hidemeLen; i++) {
       var self = $(hideme[i]);
       var bottomOfObject = self.offset().top + self.outerHeight();
