@@ -12,7 +12,7 @@
 
   @include break-point(md) {
     font-size: 1rem;
-    height: auto;
+    height: 100px;
 
     &::after {
       content: '';
