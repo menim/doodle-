@@ -1,6 +1,15 @@
 .doodle-slider {
   background-color: $bianca;
   overflow: hidden;
+  max-height: 360px;
+
+  @include break-point(lg) {
+     max-height: 316px;
+  }
+
+  @include break-point(md) {
+    max-height: 261px;
+  }
 
   @include break-point(sm) {
     display: none;
