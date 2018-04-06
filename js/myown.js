@@ -1,7 +1,18 @@
-$(document).ready(function() {
+(function (w,d,$) {
+
+$(d).ready(function() {
   /* Intial config */
 
   'use strict';
+
+  $('#doodle-slider__wrapper').slick({
+    infinite: true,
+    speed: 1000,
+    fade: true,
+    cssEase: 'linear',
+    arrows: true,
+    mobilefirst: true,
+  });
 
   $('.fancybox').fancybox({
     padding: 0,
@@ -13,52 +24,26 @@ $(document).ready(function() {
     },
   });
 
-  $('#doodle-slider__wrapper').slick({
-    infinite: true,
-    speed: 1000,
-    fade: true,
-    cssEase: 'linear',
-    arrows: true,
-    mobilefirst: true,
-  });
-
   /* Appear images and text on main page, when scroll */
-var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-var items = document.querySelectorAll('[class*="hide"]');
 
-window.addEventListener('resize', function() {
-  viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-});
+  let winH = w.innerHeight || 0;
+  var viewHeight = Math.max(d.documentElement.clientHeight, winH);
+  var items = d.querySelectorAll('[class*="hide"]');
 
-window.addEventListener('scroll', function() {
-  items.forEach(function(item) {
-    if (item.getBoundingClientRect().top < viewHeight) {
-      if (item.className.indexOf('show') === -1) {
-        item.className += ' show';
-      }
-    }
+  w.addEventListener('resize', function() {
+    winH = w.innerHeight || 0;
+    viewHeight = Math.max(d.documentElement.clientHeight, winH);
   });
-});
 
-/*  var windowVar = $(window);
-    var hideme = $(".hideme");
-    var hidemeLen = hideme.length;
-
-    windowVar.scroll(function() {
-    for (var i = 0; i < hidemeLen; i++) {
-      var self = $(hideme[i]);
-      var bottomOfObject = self.offset().top + self.outerHeight();
-      var bottomOfWindow = windowVar.scrollTop() + windowVar.height();
-
-      if (bottomOfWindow > bottomOfObject) {
-        if (self.hasClass('doodle-item__description')) {
-          self.animate({right: 0}, 700).animate({opacity: 1});
-        } else {
-          self.animate({left: 0, opacity: 1}, 700).animate({opacity: 1});
+  w.addEventListener('scroll', function() {
+    items.forEach(function(item) {
+      if (item.getBoundingClientRect().top < viewHeight) {
+        if (item.className.indexOf('show') === -1) {
+          item.className += ' show';
         }
       }
-    }
-  });*/
+    });
+  });
 
   /* scroll to*/
 
@@ -87,8 +72,8 @@ window.addEventListener('scroll', function() {
 
 /* swap to gallery page when click on ribbon with "watch pages" inscription */
 
-    var self = null;
-    var container = null;
+    let self = null;
+    let container = null;
     var items = null;
     var frstChild = null;
     var secChild = null;
@@ -135,16 +120,16 @@ window.addEventListener('scroll', function() {
 
 /* collapse-extend menu on mobile */
 
-var hamburger_btn = document.querySelector('.hamburger-btn');
-var header = document.querySelector("header");
-var headWrapper = document.querySelector("header .container");
-var h = headWrapper.clientHeight;
+var hamburger_btn = d.querySelector('.hamburger-btn');
+var header = d.querySelector("header");
+var headWrapper = d.querySelector("header .container");
+var headerHeight = headWrapper.clientHeight;
 var additionalClass = ' hamburger-btn_active';
 
 hamburger_btn.addEventListener('click', function() {
-  if (parseInt(header.style.height) !== h) {
+  if (parseInt(header.style.height) !== headerHeight) {
     this.className += additionalClass;
-    header.style.height = h + 'px';
+    header.style.height = headerHeight + 'px';
   } else {
     header.style.height = '130px';
     this.className = this.className.replace(' hamburger-btn_active', '');
@@ -153,7 +138,8 @@ hamburger_btn.addEventListener('click', function() {
 
 /* FORM VALIDATION */
 
-/** Validate text input with name, should not be empty and must consist of letters
+/** Validate text input with name, should not be empty and must consist
+   of letters
    @param {string} name - value of input
    @return {bool}
 */
@@ -195,12 +181,12 @@ function validateEmail(email) {
   return true;
 }
 
-var form = document.getElementById('contact-form');
+var form = d.getElementById('contact-form');
 
 form.addEventListener('submit', function(event) {
-  var nameVal = document.getElementById('name');
-  var textVal = document.getElementById('message');
-  var email = document.getElementById('email');
+  var nameVal = d.getElementById('name');
+  var textVal = d.getElementById('message');
+  var email = d.getElementById('email');
   if (
     !validateEmail(email) ||
     !validateTextarea(textVal) ||
@@ -209,6 +195,11 @@ form.addEventListener('submit', function(event) {
     event.preventDefault();
   }
 });
+
+}(window, document, jQuery));
+
+
+
 
 /* DETECT SWIPE GESTURE */
 /*
