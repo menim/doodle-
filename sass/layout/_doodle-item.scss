@@ -72,6 +72,7 @@
 
 .doodle-item__ribbon_active {
   left: 0;
+  right: auto; //fix for safari
 }
 
 .doodle-item__triangle {
