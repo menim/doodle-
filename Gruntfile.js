@@ -1,7 +1,9 @@
 module.exports=function(grunt) {
+  require('load-grunt-tasks')(grunt);
+
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    concat: {
+    'pkg': grunt.file.readJSON('package.json'),
+    'concat': {
       options: {
         separator: ';',
       },
@@ -10,21 +12,25 @@ module.exports=function(grunt) {
         dest: 'dist/myown.min.js',
       },
     },
-    uncss: {
+    'babel': {
+      options: {
+        sourceMap: true,
+        presets: ['es2015'],
+      },
       dist: {
-        files: [
-        {src: 'index.html', dest: 'dist/myown.css'},
-        ],
+        files: {
+          'js/myown.js': 'js/my-exp.js',
+        },
       },
     },
-    uglify: {
+    'uglify': {
       my_target: {
         files: {
           'dist/myown.js': ['js/myown.js'],
         },
       },
     },
-    jshint: {
+    'jshint': {
       files: ['Gruntfile.js', 'js/*.js'],
       options: {
         globals:
@@ -36,7 +42,7 @@ module.exports=function(grunt) {
         },
       },
     },
-    htmlmin: {
+    'htmlmin': {
       dist: {
         options: {
           removeComments: true,
@@ -47,13 +53,13 @@ module.exports=function(grunt) {
         },
       },
     },
-    htmllint: {
+    'htmllint': {
       all: ['index.html'],
     },
-    csslint: {
+    'csslint': {
       src: ['css/main.css'],
     },
-    imageoptim: {
+    'imageoptim': {
       myTask: {
         options: {
           jpegMini: false,
@@ -63,7 +69,7 @@ module.exports=function(grunt) {
         src: ['images'],
       },
     },
-    cssmin: {
+    'cssmin': {
       target: {
         files: [
           {
@@ -73,7 +79,7 @@ module.exports=function(grunt) {
         ],
       },
     },
-    concat_css: {
+    'concat_css': {
       options: {
 
       },
@@ -82,7 +88,7 @@ module.exports=function(grunt) {
         dest: 'dist/main.css',
       },
     },
-    postcss: {
+    'postcss': {
       options: {
         map: true,
         processors: [
@@ -102,20 +108,20 @@ module.exports=function(grunt) {
         src: 'css/main.css',
       },
     },
-    watch: {
+    'watch': {
       sass: {
         files: ['sass/**/*.scss'],
         tasks: ['sass'],
       },
     },
-    sass: {
+    'sass': {
       dev: {
         files: {
           'css/main.css': 'sass/main.scss',
         },
       },
     },
-    browserSync: {
+    'browserSync': {
       dev: {
         bsFiles: {
           src: [
@@ -128,39 +134,13 @@ module.exports=function(grunt) {
         },
       },
     },
-    stylelint: {
+    'stylelint': {
       simple: {
         options: {
           configFile: './.stylelintrc.json',
           format: 'sass',
         },
         src: 'sass/**/*.scss',
-      },
-    },
-    responsive_images: {
-      myTask: {
-        options: {
-          sizes: [
-          {
-            width: 320,
-            height: 240,
-          },
-          {
-            name: 'large',
-            width: 640,
-          },
-          {
-            name: 'large',
-            width: 1024,
-            suffix: '_x2',
-            quality: 60,
-          }],
-        },
-        files: [{
-          expand: true,
-          src: ['images/**.{gif,jpg,png}'],
-          dest: 'tmp/',
-        }],
       },
     },
   });
@@ -177,10 +157,7 @@ module.exports=function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-html');
-  grunt.loadNpmTasks('grunt-tenon-client');
   grunt.loadNpmTasks('grunt-stylelint');
-  grunt.loadNpmTasks('grunt-responsive-images');
-
-  grunt.registerTask('default', ['browserSync', 'watch']);
+  grunt.registerTask('default', ['babel', 'browserSync', 'watch']);
   grunt.registerTask('ondev', ['postcss', 'cssmin', 'htmlmin', 'uglify']);
 };
