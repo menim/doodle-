@@ -55,6 +55,7 @@
     margin: 55px auto 0;
     position: relative;
     text-align: center;
+    font-size: 1rem;
   }
 }
 
@@ -96,6 +97,10 @@
 
 .doodle-item__triangle_first {
   margin-left: 20px;
+
+  @include break-point(sm) {
+    margin-left: 14px;
+  }
 }
 
 .doodle-item__wrapper {
