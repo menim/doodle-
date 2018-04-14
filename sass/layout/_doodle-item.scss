@@ -247,3 +247,16 @@
 .doodle-item__basic-btn {
   margin-top: 5.294em;
 }
+
+.doodle-item__price {
+  margin-left: 200px;
+
+  @include break-point(md) {
+    margin-left: 100px;
+  }
+
+  @include break-point(sm) {
+    display: block;
+    margin: 1em auto;
+  }
+}
