@@ -16,15 +16,12 @@
   $(d).ready(function () {
     /* Init sliders */
 
-    $('#doodle-slider__wrapper').slick({
-      infinite: true,
-      speed: 1000,
-      fade: true,
-      cssEase: 'linear',
-      arrows: true,
-      mobilefirst: true,
+    let slider = tns({
+      container: '.doodle-slider__wrapper',
+      items: 1,
+      mode: 'gallery'
     });
-
+    
     $('.fancybox').fancybox({
       padding: 0,
       helpers: {
