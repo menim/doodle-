@@ -1,11 +1,20 @@
-'use strict';
-
 (function (w, d, $) {
+  'use strict';
+
+   let throttle = (action) => { 
+    let isRunning = false;
+      return function() {
+        if (isRunning) return;
+        isRunning = true;
+        w.requestAnimationFrame(() => {
+          action();
+          isRunning = false;
+        });
+      }
+    } 
 
   $(d).ready(function () {
-    /* Intial slider config */
-
-    'use strict';
+    /* Init sliders */
 
     $('#doodle-slider__wrapper').slick({
       infinite: true,
@@ -26,58 +35,25 @@
       }
     });
 
+                /* scrool to init */
+
+    let scroll = new SmoothScroll('a[href*="#"]');
+
     /* Appear images and text on main page, when scroll */
 
-    let winH = w.innerHeight || 0;
-    let viewHeight = Math.max(d.documentElement.clientHeight, winH);
-    let sections = d.querySelectorAll('[class*="hide"]');
+    let targets = d.querySelectorAll('[class*="hide"]');
 
-    w.addEventListener('resize', () => {
-      winH = w.innerHeight || 0;
-      viewHeight = Math.max(d.documentElement.clientHeight, winH);
-    });
-
-    w.addEventListener('scroll', () => {
-      sections.forEach((section) => {
-        if (section.getBoundingClientRect().top < viewHeight) {
-          if (section.className.indexOf('show') === -1) {
-            section.className += ' show';
-          }
+    let callback = function(entries) {
+      entries.forEach(entry => {
+        if(entry.intersectionRatio) {
+          entry.target.classList.add('show');
         }
       });
-    });
+    }
 
-    /* scroll to*/
+    let observer = new IntersectionObserver(callback);
 
-/*   $('a[href*="#"]:not([href="#"])').click(function() {
-      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-        let target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-        if (target.length) {
-          $('html, body').animate({
-            scrollTop: target.offset().top
-          }, 1000);
-          return false;
-        }
-      }
-    });*/
- 
-  let links = d.querySelectorAll('a[href*="#"]:not([href="#"])');
-  links.forEach((link) => {
-    link.addEventListener('click', function() {
-      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-        let target = $(this.hash);
-        target = target.length ? target : d.querySelector('[name=' + this.hash.slice(1) + ']');
-        if (target.length) {
-          $('html, body').animate({
-            scrollTop: target.offset().top
-          }, 1000);
-          return false;
-        }
-      }
-    })
-  })
-
+    targets.forEach((target) => observer.observe(target));
 
 
     /* swap to gallery page when click on ribbon with "watch pages" inscription */
