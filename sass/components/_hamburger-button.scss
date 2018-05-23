@@ -2,7 +2,6 @@
   appearance: none;
   background: transparent;
   border: 0;
-  border-radius: none;
   box-shadow: none;
   cursor: pointer;
   font-size: 0;
@@ -11,6 +10,7 @@
   text-indent: -9999px;
   transition: background .3s;
   width: 45px;
+  left: 15px;
 
   &:focus {
     outline: none;
@@ -52,12 +52,13 @@
 }
 
 .hamburger-btn_active {
+
   span {
     background: none;
 
     &::after,
     &::before {
-      transition-delay: 0s, .3s;
+      transition-delay: .1s, .3s;
     }
 
     &::before {

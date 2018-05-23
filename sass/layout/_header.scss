@@ -47,7 +47,6 @@
   top: 45px;
 
   @include break-point(sm) {
-    align-self: left;
     display: block;
   }
 }
