@@ -8,8 +8,8 @@ module.exports=function(grunt) {
         separator: ';',
       },
       dist: {
-        src: ['js/myown.js'],
-        dest: 'dist/myown.min.js',
+        src: ['js/*.js'],
+        dest: 'dist/js/myown.js',
       },
     },
     'babel': {
@@ -26,7 +26,7 @@ module.exports=function(grunt) {
     'uglify': {
       my_target: {
         files: {
-          'dist/myown.js': ['js/myown.js'],
+          'dist/js/myown.js': ['dist/js/myown.js'],
         },
       },
     },
@@ -73,8 +73,8 @@ module.exports=function(grunt) {
       target: {
         files: [
           {
-            src: 'css/main.css',
-            dest: 'dist/main.css',
+            src: 'dist/css/main.css',
+            dest: 'dist/css/main.css',
           },
         ],
       },
@@ -85,7 +85,7 @@ module.exports=function(grunt) {
       },
       all: {
         src: ['css/*.css'],
-        dest: 'dist/main.css',
+        dest: 'dist/css/main.css',
       },
     },
     'postcss': {
@@ -159,5 +159,5 @@ module.exports=function(grunt) {
   grunt.loadNpmTasks('grunt-html');
   grunt.loadNpmTasks('grunt-stylelint');
   grunt.registerTask('default', ['babel', 'browserSync', 'watch']);
-  grunt.registerTask('ondev', ['postcss', 'cssmin', 'htmlmin', 'uglify']);
+  grunt.registerTask('ondev', ['postcss', 'concat', 'concat_css', 'cssmin', 'htmlmin', 'uglify']);
 };
