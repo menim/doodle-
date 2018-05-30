@@ -1,0 +1,39 @@
+.delivery {
+  font-size: 1.1em;
+  margin: 0 auto;
+  padding: 3.375em 0;
+  width: 60%;
+
+  @include break-point(md) {
+    padding: 2.375em 0;
+  }
+}
+
+.delivery__header {
+  color: $cactus;
+  font: 400 1.25rem $font-family-2;
+  margin-bottom: 1.5em;
+  margin-top: 0;
+  text-align: center;
+
+  @include break-point(md) {
+    font-size: 1rem;
+  }
+}
+
+
+.delivery__sm-header {
+  font-size: 1.05em;
+  font-weight: 500;
+  margin: 1em 0 .5em;
+}
+
+.delivery__list {
+  padding-left: 1em;
+}
+
+.delivery__list-item {
+  font-size: .95em;
+  list-style-type: disc;
+
+}
