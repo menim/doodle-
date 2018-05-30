@@ -4,8 +4,17 @@
   padding: 3.375em 0;
   width: 60%;
 
+  @include break-point(lg) {
+    width: 75%;
+  }
+
   @include break-point(md) {
     padding: 2.375em 0;
+    width: 80%;
+  }
+  
+  @include break-point(sm) {
+    width: 90%;
   }
 }
 
@@ -20,7 +29,6 @@
     font-size: 1rem;
   }
 }
-
 
 .delivery__sm-header {
   font-size: 1.05em;
