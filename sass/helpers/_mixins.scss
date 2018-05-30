@@ -56,21 +56,21 @@
 
   @if $point == lg {
 
-    @media only screen and (max-width: $screen-md-max) {
+    @media only screen and (max-width: $screen-lg-max) {
 
       @content;
 
     }
   } @else if $point == md {
 
-    @media only screen and (max-width: $screen-sm-max) {
+    @media only screen and (max-width: $screen-md-max) {
 
       @content;
 
     }
   } @else if $point == sm {
 
-    @media only screen and (max-width: $screen-xs-max) {
+    @media only screen and (max-width: $screen-sm-max) {
 
       @content;
 
