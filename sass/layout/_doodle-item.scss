@@ -35,13 +35,12 @@
 
 .doodle-item__ribbon {
   border: 0;
-  bottom: 55px;
+  bottom: 85px;
   color: $white;
   cursor: pointer;
   display: block;
   font-size: 1.1rem;
-  height: 59px;
-  padding: 0 1.2em;
+  padding: 1.2em;
   position: absolute;
   right: 0;
   text-transform: uppercase;
@@ -51,11 +50,15 @@
     box-shadow: 0 0 11px $black-with-alpha-35;
   }
 
+  @include break-point(md) {
+    font-size: .8rem;
+  }
+
   @include break-point(sm) {
-    margin: 55px auto 0;
+    margin: 0 auto;
     position: relative;
     text-align: center;
-    font-size: 1rem;
+    bottom: 45px;
   }
 }
 
@@ -77,12 +80,12 @@
 }
 
 .doodle-item__triangle {
-  border-bottom: 12px solid transparent;
-  border-left: 12px solid $white;
-  border-top: 12px solid transparent;
+  border-bottom: .7em solid transparent;
+  border-left: .7em solid $white;
+  border-top: .7em solid transparent;
   display: inline-block;
   height: 0;
-  margin-bottom: -6px;
+  margin-bottom: -5px;
   margin-right: 5px;
   opacity: .45;
   transform: rotate(0deg);
@@ -106,12 +109,17 @@
 .doodle-item__wrapper {
   display: flex;
   overflow: hidden;
-  padding: 3.625em 2.5em 10.9375em;
+  padding: 3.625em 4.5em 10.9375em;
   position: relative;
+
+  @include break-point(md) {
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+  }
 
   @include break-point(sm) {
     flex-direction: column;
-    padding: 0 1em;
+    padding: 2em;
   }
 }
 
@@ -124,8 +132,22 @@
   }
 }
 
+.doodle-item__list {
+  padding-left: 1.5em;
+  margin-bottom: 4em;
+
+  @include break-point(md) {
+    margin-bottom: 3em;
+  }
+
+  @include break-point(sm) {
+    margin-bottom: 0;
+  }
+}
+
 .doodle-item__list-item {
-  margin-bottom: 16px;
+  list-style-type: disc;
+  margin-bottom: .5em;
 
   @include break-point(lg) {
     font-size: .9rem;
@@ -133,18 +155,15 @@
   }
 
   @include break-point(md) {
-    font-size: .8rem;
-  }
-
-  @include break-point(sm) {
-    font-size: 1rem;
+    font-size: .9rem;
+    line-height: 1.3em;
     text-align: left;
   }
 }
 
 .doodle-item__paragraph {
   line-height: 1.6;
-  padding-right: 10px;
+  padding-right: 2em;
 
   @include break-point(lg) {
     font-size: .9rem;
@@ -152,10 +171,12 @@
 
   @include break-point(md) {
     font-size: .8rem;
+    padding-right: 1em;
   }
 
   @include break-point(sm) {
     font-size: .9rem;
+    padding-right: 0;
     text-align: left;
   }
 }
@@ -167,7 +188,12 @@
   justify-content: center;
 
   @include break-point(sm) {
-    margin: 2em 0;
+    margin: 1em 3.5em 3em;
+  }
+
+  @include break-point(xs) {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -176,7 +202,7 @@
   font-family: m-webfont;
   font-size: 1.6875rem;
   line-height: 1.9em;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 
   @include break-point($header-hlg-max) {
     font-size: 1.5875rem;
@@ -191,7 +217,7 @@
   }
 
   @include break-point(sm) {
-    font-size: 1.4875rem;
+    font-size: 1rem;
     text-align: center;
   }
 }
@@ -203,10 +229,14 @@
 
   @include break-point(sm) {
     flex-basis: auto;
-    height: 750px;
+    height: 700px;
     overflow-y: scroll;
     padding: 2em 0;
     text-align: center;
+  }
+
+  @include break-point(xs) {
+    height: 800px;
   }
 }
 
@@ -215,7 +245,6 @@
   margin: .5em;
   transform: scale(1);
   transition: transform .2s ease-in;
-  
 
   @include break-point(sm) {
     flex-basis: auto;
@@ -230,6 +259,12 @@
   background-color: $french-lilac;
 
   @include gradient-linear-generator(15%, 85%, $french-lilac, $east-side, 40deg);
+
+  .doodle-item__slider {
+    @include break-point(sm) {
+      height: 600px;
+    }
+  }
 }
 
 .doodle-item_theme_ok {
@@ -242,10 +277,20 @@
   background-color: $caper;
 
   @include gradient-linear-generator(0%, 100%, $caper, $wild-willow, 40deg);
+
+  & .no-wr {
+    @include break-point(md) {
+      white-space: normal;
+    }
+  }
 }
 
 .doodle-item__basic-btn {
   margin-top: 5.294em;
+
+  @include break-point(sm) {
+    margin-top: 2em;
+  }
 }
 
 .doodle-item__price {
