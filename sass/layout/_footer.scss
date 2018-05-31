@@ -28,12 +28,12 @@
   color: $tuna;
   font-family: $font-family-2;
   font-size: 1.25rem;
-  margin: 3.55em 0 3.4em;
+  margin: 3.55em 0 2.5em;
   text-align: center;
   width: 100%;
 
   @include break-point(sm) {
-    margin: 2.55em 0 2.4em;
+    margin: 2.55em 0 1.4em;
   }
 }
 
@@ -167,9 +167,12 @@
 }
 
 .footer__basic-btn {
-  margin-top: 2.8125em; 
+  margin-top: 2.8125em;
+  width: 11em;
 
   @include break-point(sm) {
-      margin-top: 2.5em;
+    margin-top: 2.5em;
   }
 }
+
+
