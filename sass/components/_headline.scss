@@ -9,14 +9,18 @@
   position: relative;
   text-align: center;
 
-  @include break-point(450px) {
-    font-size: 1.75rem;
-  }
-
   @include break-point(md) {
     font-size: 3.75rem;
     padding-left: .01em;
     padding-right: .01em;
+  }
+
+  @include break-point(sm) {
+    font-size: 3rem;
+  }
+
+  @include break-point(xs) {
+    font-size: 2rem;
   }
 }
 
@@ -35,7 +39,7 @@
     width: 20px;
   }
 
-  @include break-point(360px) {
+  @include break-point(xs) {
     right: 20px;
   }
 }
@@ -52,15 +56,6 @@
   @include break-point(md) {
     display: none;
   }
-
-  @include break-point(sm) {
-    display: block;
-    width: 50px;
-  }
-
-  @include break-point(360px) {
-    top: 68px;
-  }
 }
 
 .headline__svg-flower-bud {
@@ -76,8 +71,8 @@
     width: 40px;
   }
 
-  @include break-point(360px) {
-    top: 65px;
+  @include break-point(xs) {
+    bottom: 0;
   }
 }
 
@@ -87,14 +82,18 @@
   top: -13px;
   transform: rotate(180deg);
 
+  @include break-point(lg) {
+    left: 105px;
+  }
+
   @include break-point(sm) {
-    left: 0;
+    left: 105px;
     top: -9px;
     width: 50px;
   }
 
-  @include break-point(lg) {
-    left: 105px;
+  @include break-point(xs) {
+    left: 20px;
   }
 }
 
@@ -110,8 +109,8 @@
     width: 40px;
   }
 
-  @include break-point(360px) {
-    top: 65px;
+  @include break-point(xs) {
+    left: 0;
   }
 }
 
