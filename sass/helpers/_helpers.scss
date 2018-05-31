@@ -36,7 +36,7 @@
 .no-wr {
   white-space: nowrap;
 
-  @include break-point(md) {
+  @include break-point(sm) {
     white-space: normal;
   }
 }
