@@ -1,5 +1,5 @@
 .delivery {
-  font-size: 1.1em;
+  font-size: 1.1rem;
   margin: 0 auto;
   padding: 3.375em 0;
   width: 60%;
@@ -9,12 +9,14 @@
   }
 
   @include break-point(md) {
+    font-size: 1rem;
     padding: 2.375em 0;
     width: 80%;
   }
-  
+
   @include break-point(sm) {
     width: 90%;
+    font-size: .8rem;
   }
 }
 
@@ -27,6 +29,10 @@
 
   @include break-point(md) {
     font-size: 1rem;
+  }
+
+  @include break-point(sm) {
+    margin-bottom: .9em;
   }
 }
 
