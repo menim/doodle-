@@ -23,15 +23,19 @@
 }
 
 .header__telephones {
-  margin-left: auto; 
-  margin-right: 2.5em;  
+  margin-left: auto;
+  margin-right: 2.5em;
 
   @include break-point($header-hlg-max) {
     margin-right: 2em;
   }
 
   @include break-point(lg) {
-    margin-right: 1.5rem;
+    margin-right: 1.5em;
+  }
+
+  @include break-point(md) {
+    margin-right: 1em;
   }
 
   @include break-point(sm) {

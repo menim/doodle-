@@ -1,7 +1,7 @@
 .telephones {
   color: $cactus;
   font-size: 1.25rem;
-  
+
   @include break-point(lg) {
     font-size: 1rem;
   }
@@ -19,14 +19,15 @@
 
   @include break-point($header-hlg-max) {
     margin-top: 0;
-  } 
+  }
 
   @include break-point(md) {
-    display: none;
+    display: block;
+    font-size: .7em;
   }
 
   @include break-point(sm) {
-    display: block;
+    font-size: 1em;
   }
 }
 
@@ -35,5 +36,9 @@
 
   @include break-point(lg) {
     margin: auto .5em;
+  }
+
+  @include break-point(md) {
+    margin: auto .4em;
   }
 }
