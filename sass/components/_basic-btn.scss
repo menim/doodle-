@@ -12,7 +12,7 @@
   text-decoration: none;
   transform: translateZ(0);
   transition: transform .3s linear;
-  width: 174px;
+  width: 10.25em;
 
   &::before {
     background: radial-gradient(ellipse at center, $black-with-alpha-35  0%, $black-with-alpha-0 80%);
