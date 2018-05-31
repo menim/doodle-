@@ -18,11 +18,11 @@
   $(d).ready(function () {
     /* Init sliders */
 
-  var slider = tns({
-    container: '.doodle-slider__wrapper',
-    items: 1,
-    mode: 'gallery'
-  });
+    var slider = tns({
+      container: '.doodle-slider__wrapper',
+      items: 1,
+      mode: 'gallery'
+    });
 
     $('.fancybox').fancybox({
       padding: 0,
