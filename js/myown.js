@@ -1,6 +1,6 @@
 'use strict';
 
-(function (w, d, $) {
+(function (w, d) {
   'use strict';
 
   var throttle = function throttle(action) {
@@ -15,119 +15,94 @@
     };
   };
 
-  $(d).ready(function () {
     /* Init sliders */
 
-    var slider = tns({
-      container: '.doodle-slider__wrapper',
-      items: 1,
-      mode: 'gallery'
-    });
-/*
-    $('.fancybox').fancybox({
-      padding: 0,
-      helpers: {
-        title: null,
-        overlay: {
-          locked: false
-        }
-      }*/
-     
-    var doodleStep = new Lightbox({
-      selector: '[data-rel="aiLightbox"]', // string
-      lazyload: true, // boolean
-      arrows: true, // boolean
-      counter: true, // boolean
-      slideSpeed: 500,
-      container: 'gallery2'
-    });
-
-    var doodleVisual = new Lightbox({
-      selector: '[data-rel="aiLightbox"]', // string
-      lazyload: true, // boolean
-      arrows: true, // boolean
-      counter: true, // boolean
-      slideSpeed: 500,
-      container: 'gallery1',
-    });
-
-    var doodleOk = new Lightbox({
-      selector: '[data-rel="aiLightbox"]', // string
-      lazyload: true, // boolean
-      arrows: true, // boolean
-      counter: true, // boolean
-      slideSpeed: 500,
-      container: 'gallery3',
-    });
-
-    /* scrool to init */
-
-    var scroll = new SmoothScroll('a[href*="#"]');
-
-    /* Appear images and text on main page, when scroll */
-
-    var targets = d.querySelectorAll('[class*="hide"]');
-
-    var callback = function callback(entries) {
-      entries.forEach(function(entry) {
-        if (entry.intersectionRatio) {
-          entry.target.classList.add('show');
-        }
-      });
-    };
-
-    var observer = new IntersectionObserver(callback);
-
-    targets.forEach(function (target) {
-      return observer.observe(target);
-    });
-
-    /* swap to gallery page when click on ribbon with "watch pages" inscription */
-
-    var self = null;
-    var container = null;
-    var items = null;
-    var frstChild = null;
-    var secChild = null;
-    var elem = null;
-    var elemLen = null;
-    var containerPreview = null;
-
-    $('.doodle-item__ribbon').click(function (e) {
-      e.preventDefault();
-      self = $(this);
-      container = self.parent();
-      items = container.find('.doodle-item__container');
-      frstChild = items.eq(0);
-      secChild = items.eq(1);
-      /*      elem = container.find('.preview');
-            elemLen = elem.length;
-            containerPreview = elem.parent();*/
-
-      frstChild.toggleClass('doodle-item__container_translate_left');
-      secChild.toggleClass('doodle-item__container_translate_right');
-      self.toggleClass('doodle-item__ribbon_active');
-      self.children().toggleClass('doodle-item__triangle_rotate_180');
-
-      /*      setTimeout(function() {
-              for (let j = 0; j < elemLen; j++) {
-                if ($(elem[j]).css('display') === 'none') {
-                  $(elem[j]).delay(j * 150).fadeIn(200);
-                }
-              }
-            }, 800);*/
-    });
-
-    /* Fill all svg images */
-
-    setTimeout(function () {
-      var el = document.querySelectorAll(".svg-path");
-      var len = el.length;
-      for (var i = 0; i < len; i++) {
-        el[i].setAttribute('fill', 'gray');
-      }
-    }, 5000);
+  var slider = tns({
+    container: '.doodle-slider__wrapper',
+    items: 1,
+    mode: 'gallery'
   });
+
+   
+  var doodleStep = new Lightbox({
+    selector: '[data-rel="aiLightbox"]', // string
+    lazyload: true, // boolean
+    arrows: true, // boolean
+    counter: true, // boolean
+    slideSpeed: 500,
+    container: 'gallery2'
+  });
+
+  var doodleVisual = new Lightbox({
+    selector: '[data-rel="aiLightbox"]', // string
+    lazyload: true, // boolean
+    arrows: true, // boolean
+    counter: true, // boolean
+    slideSpeed: 500,
+    container: 'gallery1',
+  });
+
+  var doodleOk = new Lightbox({
+    selector: '[data-rel="aiLightbox"]', // string
+    lazyload: true, // boolean
+    arrows: true, // boolean
+    counter: true, // boolean
+    slideSpeed: 500,
+    container: 'gallery3',
+  });
+
+  /* scrool to init */
+
+  var scroll = new SmoothScroll('a[href*="#"]');
+
+  /* Appear images and text on main page, when scroll */
+
+  var targets = d.querySelectorAll('[class*="hide"]');
+
+  var callback = function callback(entries) {
+    entries.forEach(function(entry) {
+      if (entry.intersectionRatio) {
+        entry.target.classList.add('show');
+      }
+    });
+  };
+
+  var observer = new IntersectionObserver(callback);
+
+  targets.forEach(function(target) {
+    return observer.observe(target);
+  });
+
+  /* swap to gallery page when click on ribbon with "watch pages" inscription */
+
+  function slideSection(e) {
+     e.preventDefault();
+     var ribbonBtn = e.target;
+     var doodleContainer = ribbonBtn.parentNode;
+     var containersList = doodleContainer.querySelectorAll('.doodle-item__container');
+     containersList[0].classList.toggle('doodle-item__container_translate_left');
+     containersList[1].classList.toggle('doodle-item__container_translate_right');
+     ribbonBtn.classList.toggle('doodle-item__ribbon_active');
+     ribbonBtn.querySelectorAll('.doodle-item__triangle').forEach(function(item){
+       item.classList.toggle('doodle-item__triangle_rotate_180');
+     });
+  }
+
+  document.querySelectorAll('.doodle-item__ribbon').forEach(function(ribbon) {
+    ribbon.addEventListener('click', slideSection);
+  });
+
+
+  /* Fill all svg images */
+
+  setTimeout(function () {
+    var el = document.querySelectorAll(".svg-path");
+    var len = el.length;
+    for (var i = 0; i < len; i++) {
+      el[i].setAttribute('fill', 'gray');
+    }
+  }, 5000);
+
 
   /* collapse-extend menu on mobile */
 
@@ -201,46 +176,4 @@
       event.preventDefault();
     }
   });
-})(window, document, jQuery);
-
-/* DETECT SWIPE GESTURE */
-/*
-let xDown = null;
-let yDown = null;
-
-$('.doodle-item__container').on('touchstart', function(e) {
-  xDown = e.originalEvent.touches[0].clientX;
-});
-
-$('.doodle-item__container').on('touchmove', function(e) {
-  let self = $(this);
-  let ribbonTriangles = self.parent().find('.doodle-item__ribbon').find('a').children();
-  if (!xDown) {
-    return;
-  }
-
-  let xUp = e.originalEvent.touches[0].clientX, xDiff = xDown - xUp;
-
-  if (xDiff > 100) {
-    self.addClass('doodle__container_translate_left');
-    self.next().toggle('doodle__container_translate_right');
-    ribbonTriangles.addClass('rotate');
-       /*let el = self.next().addClass('clicked-two')/*.find('.preview');
- let elLen = el.length;
-    setTimeout(function() {
-      el.each(function(item) {
-        for (let k = 0; k < elLen; k++) {
-          if ($(el[k]).css('display') === 'none') {
-            $(el[k]).delay(k * 150).fadeIn(200);
-          }
-        }
-      });
-    }, 800);
-  } else if (xDiff < -50) {
-    self.prev().removeClass('doodle__container_translate_left');
-    self.next().toggle('doodle__container_translate_right');
-    ribbonTriangles.removeClass('rotate');
-  }
-});*/
-//# sourceMappingURL=my-exp.js.map
-//# sourceMappingURL=myown.js.map
+})(window, document);
