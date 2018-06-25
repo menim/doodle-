@@ -23,7 +23,7 @@
       items: 1,
       mode: 'gallery'
     });
-
+/*
     $('.fancybox').fancybox({
       padding: 0,
       helpers: {
@@ -31,7 +31,33 @@
         overlay: {
           locked: false
         }
-      }
+      }*/
+     
+    var doodleStep = new Lightbox({
+      selector: '[data-rel="aiLightbox"]', // string
+      lazyload: true, // boolean
+      arrows: true, // boolean
+      counter: true, // boolean
+      slideSpeed: 500,
+      container: 'gallery2'
+    });
+
+    var doodleVisual = new Lightbox({
+      selector: '[data-rel="aiLightbox"]', // string
+      lazyload: true, // boolean
+      arrows: true, // boolean
+      counter: true, // boolean
+      slideSpeed: 500,
+      container: 'gallery1',
+    });
+
+    var doodleOk = new Lightbox({
+      selector: '[data-rel="aiLightbox"]', // string
+      lazyload: true, // boolean
+      arrows: true, // boolean
+      counter: true, // boolean
+      slideSpeed: 500,
+      container: 'gallery3',
     });
 
     /* scrool to init */
@@ -43,7 +69,7 @@
     var targets = d.querySelectorAll('[class*="hide"]');
 
     var callback = function callback(entries) {
-      entries.forEach(function (entry) {
+      entries.forEach(function(entry) {
         if (entry.intersectionRatio) {
           entry.target.classList.add('show');
         }
