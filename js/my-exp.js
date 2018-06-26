@@ -1,114 +1,119 @@
-(function (w, d, $) {
+
+'use strict';
+
+(function(w, d) {
   'use strict';
 
-   let throttle = (action) => { 
-    let isRunning = false;
-      return function() {
-        if (isRunning) return;
-        isRunning = true;
-        w.requestAnimationFrame(() => {
-          action();
-          isRunning = false;
-        });
-      }
-    } 
+  var throttle = function throttle(action) {
+    var isRunning = false;
+    return function() {
+      if (isRunning) return;
+      isRunning = true;
+      w.requestAnimationFrame(function() {
+        action();
+        isRunning = false;
+      });
+    };
+  };
 
-  $(d).ready(function () {
     /* Init sliders */
 
-    let slider = tns({
-      container: '.doodle-slider__wrapper',
-      items: 1,
-      mode: 'gallery'
-    });
-    
-    $('.fancybox').fancybox({
-      padding: 0,
-      helpers: {
-        title: null,
-        overlay: {
-          locked: false
-        }
-      }
-    });
-
-                /* scrool to init */
-
-    let scroll = new SmoothScroll('a[href*="#"]');
-
-    /* Appear images and text on main page, when scroll */
-
-    let targets = d.querySelectorAll('[class*="hide"]');
-
-    let callback = function(entries) {
-      entries.forEach(entry => {
-        if(entry.intersectionRatio) {
-          entry.target.classList.add('show');
-        }
-      });
-    }
-
-    let observer = new IntersectionObserver(callback);
-
-    targets.forEach((target) => observer.observe(target));
-
-
-    /* swap to gallery page when click on ribbon with "watch pages" inscription */
-
-    let self = null;
-    let container = null;
-    let items = null;
-    let frstChild = null;
-    let secChild = null;
-    let elem = null;
-    let elemLen = null;
-    let containerPreview = null;
-
-    $('.doodle-item__ribbon').click(function(e) {
-      e.preventDefault();
-      self = $(this);
-      container = self.parent();
-      items = container.find('.doodle-item__container');
-      frstChild = items.eq(0);
-      secChild = items.eq(1);
-      /*      elem = container.find('.preview');
-            elemLen = elem.length;
-            containerPreview = elem.parent();*/
-
-      frstChild.toggleClass('doodle-item__container_translate_left');
-      secChild.toggleClass('doodle-item__container_translate_right');
-      self.toggleClass('doodle-item__ribbon_active');
-      self.children().toggleClass('doodle-item__triangle_rotate_180');
-
-      /*      setTimeout(function() {
-              for (let j = 0; j < elemLen; j++) {
-                if ($(elem[j]).css('display') === 'none') {
-                  $(elem[j]).delay(j * 150).fadeIn(200);
-                }
-              }
-            }, 800);*/
-    });
-
-    /* Fill all svg images */
-
-    setTimeout(function() {
-      let el = document.querySelectorAll(".svg-path");
-      let len = el.length;
-      for (let i = 0; i < len; i++) {
-        el[i].setAttribute('fill', 'gray');
-      }
-    }, 5000);
+  var slider = tns({
+    container: '.doodle-slider__wrapper',
+    items: 1,
+    mode: 'gallery'
   });
-      
+
+   
+  var doodleStep = new Lightbox({
+    selector: '[data-rel="aiLightbox"]', // string
+    lazyload: true, // boolean
+    arrows: true, // boolean
+    counter: true, // boolean
+    slideSpeed: 500,
+    container: 'gallery2'
+  });
+
+  var doodleVisual = new Lightbox({
+    selector: '[data-rel="aiLightbox"]', // string
+    lazyload: true, // boolean
+    arrows: true, // boolean
+    counter: true, // boolean
+    slideSpeed: 500,
+    container: 'gallery1',
+  });
+
+  var doodleOk = new Lightbox({
+    selector: '[data-rel="aiLightbox"]', // string
+    lazyload: true, // boolean
+    arrows: true, // boolean
+    counter: true, // boolean
+    slideSpeed: 500,
+    container: 'gallery3',
+  });
+
+  /* scrool to init */
+
+  var scroll = new SmoothScroll('a[href*="#"]');
+
+  /* Appear images and text on main page, when scroll */
+
+  var targets = d.querySelectorAll('[class*="hide"]');
+
+  var callback = function callback(entries) {
+    entries.forEach(function(entry) {
+      if (entry.intersectionRatio) {
+        entry.target.classList.add('show');
+      }
+    });
+  };
+
+  var observer = new IntersectionObserver(callback);
+
+  targets.forEach(function(target) {
+    return observer.observe(target);
+  });
+
+  /* swap to gallery page when click on ribbon with "watch pages" inscription */
+
+  function slideSection(e) {
+     e.preventDefault();
+     var ribbonBtn = e.target;
+     var doodleContainer = ribbonBtn.parentNode;
+     var containersList = doodleContainer.querySelectorAll('.doodle-item__container');
+     containersList[0].classList.toggle('doodle-item__container_translate_left');
+     containersList[1].classList.toggle('doodle-item__container_translate_right');
+     ribbonBtn.classList.toggle('doodle-item__ribbon_active');
+     ribbonBtn.querySelectorAll('.doodle-item__triangle').forEach(function(item){
+       item.classList.toggle('doodle-item__triangle_rotate_180');
+     });
+  }
+
+  document.querySelectorAll('.doodle-item__ribbon').forEach(function(ribbon) {
+    ribbon.addEventListener('click', slideSection);
+  });
+
+
+  /* Fill all svg images */
+
+  setTimeout(function () {
+    var el = document.querySelectorAll(".svg-path");
+    var len = el.length;
+    for (var i = 0; i < len; i++) {
+      el[i].setAttribute('fill', 'gray');
+    }
+  }, 5000);
+
+
   /* collapse-extend menu on mobile */
 
-  let hamburger_btn = d.querySelector('.hamburger-btn');
-  let header = d.querySelector("header");
-  let headWrapper = d.querySelector("header .container");
-  let headerHeight = headWrapper.clientHeight;
-  let additionalClass = ' hamburger-btn_active';
+  var hamburger_btn = d.querySelector('.hamburger-btn');
+  var header = d.querySelector("header");
+  var headWrapper = d.querySelector("header .container");
+  var headerHeight = headWrapper.clientHeight;
+  var additionalClass = ' hamburger-btn_active';
 
-  hamburger_btn.addEventListener('click', function() {
+  hamburger_btn.addEventListener('click', function () {
     if (parseInt(header.style.height) !== headerHeight) {
       this.className += additionalClass;
       header.style.height = headerHeight + 'px';
@@ -120,97 +125,105 @@
 
   /* FORM VALIDATION */
 
-  /** Validate text input with name, should not be empty and must consist
-     of letters
-     @param {string} name - value of input
-     @return {bool}
-  */
-  function validateName(name) {
-    let re = /^[а-яА-яіІЇїЄєґҐёЁA-Za-z]+$/;
-    if (name.value === '' || !re.test(name.value)) {
-      name.nextElementSibling.innerHTML = 'Вы ввели неправильное имя';
-      name.nextElementSibling.className = 'error is-active-error';
-      return false;
+  let contactForm = document.getElementById("contact-form");
+  let nameField = document.getElementById("name");
+  let emailField = document.getElementById("email");
+  let textField = document.getElementById("message");
+  let formBtn = document.getElementById("submit-btn");
+
+  const  validRegExp = {
+    email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+    name: /^[а-яА-яіІЇїЄєґҐёЁA-Za-z]+$/
+  };
+
+  var hasError = function(field) {
+    if (field.type === "button" || field.type === "submit") {
+      return;
     }
-    return true;
-  }
 
-  /** Validate textarea, should not be empty
-     @param {string} text - value of textarea
-     @return {bool}
-  */
-  function validateTextarea(text) {
-    if (elem.value === '') {
-      elem.nextElementSibling.innerHTML = 'Сообщение не может быть пустым. Пожалуйста введите текст сообщения';
-      elem.nextElementSibling.className = 'error is-active-error';
-      return false;
+    var emailTest = validRegExp.email.test(field.value);
+    var nameTest = validRegExp.name.test(field.value);
+
+    if (field.value === "") {
+      return "Пожалуйста заполните поле";
     }
-    return true;
-  }
-
-  /** Validate email input, should be valid email address
-    @param {string} email  - value of email input
-    @return {bool}    
-  */
-  function validateEmail(email) {
-    let re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (email.value === '' || !re.test(email.value)) {
-      email.nextElementSibling.innerHTML = 'Вы ввели неправильный email-адрес';
-      email.nextElementSibling.className = 'error is-active-error';
-      return false;
+    if (field.name === "name" && !nameTest) {
+      return "Вы ввели неправильное имя";
     }
-    return true;
-  }
+    if (field.name === "email" && !emailTest) {
+      return "Вы ввели неправильный email";
+    }
+  };
 
-  let form = d.getElementById('contact-form');
+  var showError = function(field, error) {
+    field.classList.add("form-error");
+    var id = field.id || field.name;
 
-  form.addEventListener('submit', function (event) {
-    let nameVal = d.getElementById('name');
-    let textVal = d.getElementById('message');
-    let email = d.getElementById('email');
-    if (!validateEmail(email) || !validateTextarea(textVal) || !validateName(nameVal)) {
+    if (!id) return;
+    var message = field.form.querySelector(".error-message#error-for-" + id);
+
+    if (!message) {
+      message = document.createElement("div");
+      message.className = "error-message";
+      message.id = "error-for-" + id;
+      field.parentNode.insertBefore(message, field.nextSibling);
+    }
+
+    field.setAttribute("aria-describedby", "error-for-" + id);
+
+    message.innerHTML = error;
+
+    message.style.display = "block";
+    message.style.visibility = "visible";
+  };
+
+  var removeError = function(field) {
+    field.classList.remove("form-error");
+    field.removeAttribute("aria-describedby");
+
+    var id = field.id || field.name;
+    if (!id) return;
+
+    var message = field.form.querySelector(".error-message#error-for-" + id);
+    if (!message) return;
+
+    message.innerHTML = "";
+    message.style.display = "none";
+    message.style.visibility = "hidden";
+  };
+
+  contactForm.addEventListener(
+    "blur",
+    function(event) {
+      var error = hasError(event.target);
+      if (error) {
+        showError(event.target, error);
+        return;
+      }
+      removeError(event.target);
+    },
+    true
+  );
+
+  document.addEventListener("submit", function(event) {
+    var fields = event.target.elements;
+    var fieldsLen = fields.length;
+
+    var error, hasErrors;
+    for (var i = 0; i < fieldsLen; i++) {
+      error = hasError(fields[i]);
+      if (error) {
+        showError(fields[i], error);
+        if (!hasErrors) {
+          hasErrors = fields[i];
+        }
+      }
+    }
+
+    if (hasErrors) {
       event.preventDefault();
+      hasErrors.focus();
     }
   });
-})(window, document, jQuery);
 
-/* DETECT SWIPE GESTURE */
-/*
-let xDown = null;
-let yDown = null;
-
-$('.doodle-item__container').on('touchstart', function(e) {
-  xDown = e.originalEvent.touches[0].clientX;
-});
-
-$('.doodle-item__container').on('touchmove', function(e) {
-  let self = $(this);
-  let ribbonTriangles = self.parent().find('.doodle-item__ribbon').find('a').children();
-  if (!xDown) {
-    return;
-  }
-
-  let xUp = e.originalEvent.touches[0].clientX, xDiff = xDown - xUp;
-
-  if (xDiff > 100) {
-    self.addClass('doodle__container_translate_left');
-    self.next().toggle('doodle__container_translate_right');
-    ribbonTriangles.addClass('rotate');
-       /*let el = self.next().addClass('clicked-two')/*.find('.preview');
- let elLen = el.length;
-    setTimeout(function() {
-      el.each(function(item) {
-        for (let k = 0; k < elLen; k++) {
-          if ($(el[k]).css('display') === 'none') {
-            $(el[k]).delay(k * 150).fadeIn(200);
-          }
-        }
-      });
-    }, 800);
-  } else if (xDiff < -50) {
-    self.prev().removeClass('doodle__container_translate_left');
-    self.next().toggle('doodle__container_translate_right');
-    ribbonTriangles.removeClass('rotate');
-  }
-});*/
-//# sourceMappingURL=my-exp.js.map
+})(window, document);

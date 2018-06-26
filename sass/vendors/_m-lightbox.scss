@@ -77,7 +77,21 @@
 .m-lightbox__close {
   top: 1em;
   right: 1em;
+
+  svg {
+    height: 48px;
+    width: 48px;
+  }
+
+  @include break-point($screen-md-max) {
+    svg {
+      height: 32px;
+      width: 32px;
+    }  
+  }
+
 }
+
 .m-lightbox__nextPrev {
   top: 50%;
   -webkit-transform: translateY(-50%);
