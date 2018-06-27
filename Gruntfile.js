@@ -8,7 +8,7 @@ module.exports=function(grunt) {
         separator: ';',
       },
       dist: {
-        src: ['js/*.js', '!js/my-exp.js'],
+        src: ['js/tiny-slider.js','js/Swipe.js','js/slider.js','js/smooth-scroll.polyfills.js','js/intersection-observer.js','js/myown.js'],
         dest: 'dist/js/myown.js',
       },
     },
@@ -19,7 +19,7 @@ module.exports=function(grunt) {
       },
       dist: {
         files: {
-          'js/myown.js': 'js/my-exp.js',
+          'dist/js/myown.js': 'dist/js/myown.js',
         },
       },
     },
@@ -149,7 +149,7 @@ module.exports=function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-concat-css');
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-watch');``
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-imageoptim');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -158,6 +158,6 @@ module.exports=function(grunt) {
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-html');
   grunt.loadNpmTasks('grunt-stylelint');
-  grunt.registerTask('default', ['babel', 'browserSync', 'watch']);
-  grunt.registerTask('ondev', ['postcss', 'concat', 'concat_css', 'cssmin', 'htmlmin', 'uglify']);
+  grunt.registerTask('default', ['browserSync', 'watch']);
+  grunt.registerTask('onprod', ['postcss', 'concat', 'concat_css', 'cssmin', 'htmlmin', 'uglify', 'babel']);
 };
