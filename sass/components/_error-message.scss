@@ -1,10 +1,10 @@
 .error-message {
+  position: absolute;
   color: $radical-red;
   font-size: .8rem;
-  top: 75px;
   transition: opacity 1s linear;
+}
 
-  @include break-point(sm) {
-    top: 70px;
-  }
+.form-error {
+  border: 2px solid $radical-red;
 }
