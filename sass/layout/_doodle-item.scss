@@ -246,6 +246,10 @@
   transform: scale(1);
   transition: transform .2s ease-in;
 
+  img {
+    width: 100%;
+  }
+
   @include break-point(sm) {
     flex-basis: auto;
   }
@@ -276,7 +280,7 @@
 .doodle-item_theme_simple-step {
   background-color: $caper;
 
-  @include gradient-linear-generator(0%, 100%, $caper, $wild-willow, 40deg);
+ @include gradient-linear-generator(0%, 100%, $caper, $wild-willow, 40deg);
 
   & .no-wr {
     @include break-point(md) {
