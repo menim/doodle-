@@ -226,6 +226,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%; //fix ie10
 
   @include break-point(sm) {
     flex-basis: auto;
@@ -241,6 +242,7 @@
 }
 
 .doodle-item__preview {
+  display: inline-block; // fix ie10
   flex: 0 1 23%;
   margin: .5em;
   transform: scale(1);
@@ -309,3 +311,4 @@
     margin: 1em auto;
   }
 }
+
