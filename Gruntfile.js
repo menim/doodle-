@@ -15,6 +15,7 @@ module.exports=function(grunt) {
     'babel': {
       options: {
         sourceMap: true,
+        plugins: ['transform-object-assign'],
         presets: ['es2015'],
       },
       dist: {
@@ -92,16 +93,7 @@ module.exports=function(grunt) {
       options: {
         map: true,
         processors: [
-            require('autoprefixer')([
-            'Android 2.3',
-            'Android >= 4',
-            'Chrome >= 20',
-            'Firefox >= 3',
-            'Explorer 9',
-            'iOS >= 6',
-            'Opera >= 8',
-            'Safari >= 6',
-          ]),
+            require('autoprefixer')(['last 5 versions']),
         ],
       },
       dist: {
@@ -149,7 +141,7 @@ module.exports=function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-concat-css');
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-watch');``
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-imageoptim');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
