@@ -10,7 +10,7 @@
 }
 
 .footer__wrapper {
-  display: flex;
+  display: flex; // when autoprefixer add display: -webkit-box, that broken ios 8 view 
   flex-wrap: wrap;
   justify-content: center;
   overflow: hidden;
