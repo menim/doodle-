@@ -16,6 +16,17 @@
     };
   };
 
+  /* polifill for forEach method in IE */
+
+  if (window.NodeList && !NodeList.prototype.forEach) {
+    NodeList.prototype.forEach = function (callback, thisArg) {
+        thisArg = thisArg || window;
+        for (var i = 0; i < this.length; i++) {
+            callback.call(thisArg, this[i], i, this);
+        }
+    };
+}
+
   /* Init sliders */
 
   var slider = tns({
@@ -217,6 +228,6 @@
       event.preventDefault();
       hasErrors.focus();
     }
-  });
+  }, false);
 })(window, document);
 //# sourceMappingURL=myown.js.map
