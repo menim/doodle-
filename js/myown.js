@@ -71,7 +71,7 @@
   var targets = d.querySelectorAll('[class*="hide"]');
 
   var callback = function callback(entries) {
-    entries.forEach(function (entry) {
+    entries.forEach(function(entry) {
       if (entry.intersectionRatio) {
         entry.target.classList.add('show');
       }
@@ -88,24 +88,24 @@
 
   function slideSection(e) {
     e.preventDefault();
-    var ribbonBtn = e.target;
+    var ribbonBtn = this;
     var doodleContainer = ribbonBtn.parentNode;
     var containersList = doodleContainer.querySelectorAll('.doodle-item__container');
     containersList[0].classList.toggle('doodle-item__container_translate_left');
     containersList[1].classList.toggle('doodle-item__container_translate_right');
     ribbonBtn.classList.toggle('doodle-item__ribbon_active');
-    ribbonBtn.querySelectorAll('.doodle-item__triangle').forEach(function (item) {
+    ribbonBtn.querySelectorAll('.doodle-item__triangle').forEach(function(item) {
       item.classList.toggle('doodle-item__triangle_rotate_180');
     });
   }
 
-  document.querySelectorAll('.doodle-item__ribbon').forEach(function (ribbon) {
+  document.querySelectorAll('.doodle-item__ribbon').forEach(function(ribbon) {
     ribbon.addEventListener('click', slideSection);
   });
 
   /* Fill all svg images */
 
-  setTimeout(function () {
+  setTimeout(function() {
     var el = document.querySelectorAll(".svg-path");
     var len = el.length;
     for (var i = 0; i < len; i++) {
@@ -121,7 +121,7 @@
   var headerHeight = headWrapper.clientHeight;
   var additionalClass = ' hamburger-btn_active';
 
-  hamburger_btn.addEventListener('click', function () {
+  hamburger_btn.addEventListener('click', function() {
     if (parseInt(header.style.height) !== headerHeight) {
       this.className += additionalClass;
       header.style.height = headerHeight + 'px';
